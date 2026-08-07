@@ -1,0 +1,291 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>DR STEEZE - Creative Director</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353434",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "background": "#141313",
+                        "surface-container-high": "#2b2a2a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-variant": "#353434",
+                        "surface": "#141313",
+                        "primary": "#c9c6c5",
+                        "on-secondary": "#2f3131",
+                        "on-background": "#e5e2e1",
+                        "tertiary": "#d7c3b0",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-tint": "#c9c6c5",
+                        "tertiary-container": "#140b03",
+                        "surface-bright": "#3a3939",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary-fixed": "#241a0e",
+                        "on-primary-container": "#7c7a7a",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-container": "#887867",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "on-primary": "#313030",
+                        "on-error": "#690005",
+                        "on-tertiary": "#3a2e21",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#5f5e5e",
+                        "tertiary-fixed": "#f4dfcb",
+                        "surface-dim": "#141313",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "secondary-container": "#454747",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#0d0d0d",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "outline": "#8e9192",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#e5e2e1",
+                        "outline-variant": "#444748",
+                        "secondary": "#c6c6c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "stack-sm": "12px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["60px", { "lineHeight": "68px", "fontWeight": "600" }],
+                        "display-lg": ["84px", { "lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .fade-in-element {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-element.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Specific gold accent color for buttons as requested, mapping to tertiary palette for theme consistency */
+        .ghost-button {
+            border: 1px solid theme('colors.on-surface');
+            color: theme('colors.on-surface');
+            transition: all 0.3s ease;
+        }
+        .ghost-button:hover {
+            border-color: theme('colors.tertiary');
+            color: theme('colors.tertiary');
+        }
+        
+        .primary-button {
+            border: 1px solid theme('colors.tertiary');
+            color: theme('colors.tertiary');
+            transition: all 0.3s ease;
+        }
+        .primary-button:hover {
+            background-color: theme('colors.tertiary');
+            color: theme('colors.background');
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-tertiary selection:text-background">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-tertiary/10">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-[1920px] mx-auto">
+<a class="font-headline-lg text-headline-lg tracking-tighter text-on-surface uppercase hover:text-tertiary transition-colors duration-300" href="#">DR STEEZE</a>
+<div class="hidden md:flex items-center gap-gutter">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Culture of Zion</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<a class="hidden md:inline-block ghost-button font-label-caps text-label-caps px-6 py-3 uppercase" href="#">Work With Me</a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-24 md:pt-0">
+<!-- Cinematic Video Placeholder Background -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-background/60 to-background z-10"></div>
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, ultra-high definition establishing shot of a dimly lit, atmospheric studio space. The lighting is moody and dramatic, with a single soft spotlight highlighting a sleek, minimalist chair. The color palette is strictly limited to deep matte blacks, charcoal grays, and subtle hints of warm, elegant gold in the shadows. The composition is highly intentional, evoking a sense of prestige, mystery, and high-fashion editorial design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUsyb2la51TrcbUBTfbg6xH_Wy0l0IaEZ4GKT4QC4EqH83hZCYKdVABJEnGe_u41HECJtiP2deIbrGXlsi1NCj8I13z3ZoFcCBFvM1SpoOjHDJfY8_T9Y_u803U1oAjLuOpnqK7KZwdO5XnNodUpCOkDl_8yHugHeyHbYVh364fcBktGRRhxp6HiUsYIYnFBCepmmaNPrAc-IYmAlhW0ui7g99d6RGQA-RO4igCBlcUm093ZpYmZujng')"></div>
+</div>
+<div class="relative z-10 w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter text-center md:text-left fade-in-element">
+<div class="md:col-span-8 md:col-start-3 lg:col-span-10 lg:col-start-2 flex flex-col items-center">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg tracking-tighter mb-4">DR STEEZE</h1>
+<h2 class="font-headline-lg text-headline-lg text-tertiary italic mb-8">Creative Director</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl text-center mb-12">
+                        Creating timeless stories through photography, filmmaking, and handcrafted design.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-6 justify-center w-full sm:w-auto">
+<a class="primary-button font-label-caps text-label-caps px-8 py-4 uppercase text-center" href="#portfolio">View Portfolio</a>
+<a class="ghost-button font-label-caps text-label-caps px-8 py-4 uppercase text-center" href="#contact">Work With Me</a>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 fade-in-element" style="transition-delay: 0.5s;">
+<span class="font-label-caps text-label-caps text-tertiary">Scroll</span>
+<div class="w-[1px] h-12 bg-gradient-to-b from-tertiary to-transparent"></div>
+</div>
+</section>
+<!-- Featured Work Section (Editorial Grid Layout) -->
+<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto bg-background" id="portfolio">
+<div class="max-w-7xl mx-auto">
+<h3 class="font-headline-xl text-headline-xl mb-24 fade-in-element">Featured Work</h3>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Large Feature Piece -->
+<div class="md:col-span-8 group cursor-pointer fade-in-element">
+<div class="w-full aspect-[4/3] md:aspect-auto md:h-[700px] overflow-hidden bg-surface-container-low mb-6 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A striking high-contrast fashion editorial photograph featuring an androgynous model in avant-garde black attire against a pure matte black seamless backdrop. Strong, directional rim lighting defines the silhouette, while the model's face remains partially obscured in shadow. The image exudes a quiet, timeless confidence typical of luxury brand campaigns. The overall aesthetic is stark, minimalist, and deeply cinematic, emphasizing form and texture over color." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVpfa45nRefF-T2CTMiSJMMGjazLHTEQcqlRN4Dnjk0qJY5tRKshJ8fClt5_Pt_9pfaWWza9-sQs9e73FD6xmgxbiAcYWSJrrfJ2-15kk0_srEqYMel6ADHnbv4N7N00uxGIkh2tQ3RwnyqvYRgrF6bWOAsyHLxBDKUxO9_4ZDVUTUAHuFsy31nGW-pZhW34rp54f1MUO8tLm7EewfD5MJD5B89ZS_hnF1qYItlViDd-6ZO1Z3odKpAg')"></div>
+<!-- Video indicator bar -->
+<div class="absolute bottom-0 left-0 h-[2px] bg-tertiary w-0 group-hover:w-full transition-all duration-1000 ease-in-out"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-lg text-headline-lg group-hover:text-tertiary transition-colors">The Void Collection</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Cinematography &amp; Direction</p>
+</div>
+<div class="border border-tertiary px-3 py-1 font-label-caps text-label-caps text-on-surface uppercase">2024</div>
+</div>
+</div>
+<!-- Smaller Feature Piece 1 -->
+<div class="md:col-span-4 mt-12 md:mt-0 md:pt-32 group cursor-pointer fade-in-element">
+<div class="w-full aspect-[3/4] overflow-hidden bg-surface-container-low mb-6 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A beautifully composed still life photograph of handcrafted design objects resting on a textured dark slate surface. The lighting is soft and diffused, creating subtle gradients of gray and deep black across the objects. A single, thin beam of warm golden light cuts across the composition, highlighting a delicate metallic detail. The mood is serene, intentional, and highly curated, reflecting a sophisticated, minimalist design philosophy." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcJ4DNjX0aRZSGqeXzSikKuPNVgtHbUr1ItTj9AYWbFz__aRmZpaHwWMQ9ra44QUMdRQCPU4_3DplxO-Kic1_kKPt3Qb1Ql2SLMNxupHLQVEO4h_7HX-2EJ8d2LgWXSEbMHmGECAiolTgLzqo7NM_UMGvxLUGp0a4GS8ybrQjX2DRffY9DuStcfGt3bBKF9lKkJsNLCCo2KM1pZHGJe4gA39oyja0pGjxshmGZkVO9X1oZr_BCugq2Yw')"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-lg text-headline-lg text-[28px] group-hover:text-tertiary transition-colors">Tactile Silence</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Product Photography</p>
+</div>
+</div>
+</div>
+<!-- Smaller Feature Piece 2 -->
+<div class="md:col-span-5 mt-24 group cursor-pointer fade-in-element">
+<div class="w-full aspect-square overflow-hidden bg-surface-container-low mb-6 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="A moody, architectural photograph capturing the stark geometry of a modern concrete building at dusk. The sky is a deep, almost black gradient, contrasting sharply with the pale, minimalist structure. Sharp shadows cut across the facades, emphasizing the precise angles and sheer scale of the design. The visual style is highly editorial, focusing on negative space and architectural precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDuHkgOBnF2fTH9pk-ZJdzuxLtl8On31u1Uj38E5M21ENk2GD2R-k2JtbqcHGWjddwewJhHPaMTHnLn8GsIvSgBleFODhuA76rdJJMXhN1bkdaciOPyECw5vH1L0VGrwlPVWTtxunkwhWE279o-Jy7CUzTrZAXvMRwHHY3kr6bgAvfKqdkj2b1eTDz9UTH7IGmWDDaVTH9_gVii9aQc77Bmdo4yy56N86ea977SIiuPXC1_MRjR5BD6jw')"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-lg text-headline-lg text-[28px] group-hover:text-tertiary transition-colors">Brutalist Echoes</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Editorial Campaign</p>
+</div>
+</div>
+</div>
+<!-- Medium Feature Piece offset -->
+<div class="md:col-span-6 md:col-start-7 mt-24 md:mt-48 group cursor-pointer fade-in-element">
+<div class="w-full aspect-[16/9] overflow-hidden bg-surface-container-low mb-6 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" data-alt="An expansive, cinematic landscape shot taken at twilight. A solitary figure stands in the foreground, silhouetted against a vast, empty expanse of dark sand and distant mountains. The sky is an intense, monochromatic dark grey, lending the scene an otherworldly, isolated atmosphere. The composition is wide and sweeping, designed to evoke a sense of profound scale and emotional depth." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBzvYNzHVQ-9M8VvfbSC-sZG3OlZ3KxShlBMA8SZQv_qcIX2wolbT9l4KTMVk-iHbzijK96yr0m-l7KxV73DHWDZF5mdIfkosRV4cMnmQV5RVTI_jRLxKkL9fdHZKWopJt2XbnGEmE0CwSu4RUFeiNr7E54tIQO3EU-IIzMcVmQEMkcyiemdu0UonVgp53R2S7-jca7mL5cK5MzXzpeEGAY7SlZBBSq9KSxQgLjiuhGdiKTqmaIm1kkA')"></div>
+</div>
+<div class="flex justify-between items-start">
+<div>
+<h4 class="font-headline-lg text-headline-lg group-hover:text-tertiary transition-colors">Horizons</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Short Film</p>
+</div>
+<div class="border border-tertiary px-3 py-1 font-label-caps text-label-caps text-on-surface uppercase">2023</div>
+</div>
+</div>
+</div>
+<div class="mt-32 flex justify-center fade-in-element">
+<a class="ghost-button font-label-caps text-label-caps px-8 py-4 uppercase" href="#">View Full Archive</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-background border-t border-outline-variant mt-24">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-7xl mx-auto">
+<div class="md:col-span-6 flex flex-col justify-between">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-on-surface mb-6">DR STEEZE</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+                        Creative Direction &amp; Visual Storytelling. Available for select commissions globally.
+                    </p>
+</div>
+<div class="mt-24 md:mt-0 font-body-md text-body-md text-tertiary">
+                    © 2024 DR STEEZE. ALL RIGHTS RESERVED.
+                </div>
+</div>
+<div class="md:col-span-6 md:flex md:justify-end">
+<div class="flex flex-col gap-4">
+<h3 class="font-label-caps text-label-caps text-on-surface mb-4">Connect</h3>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary hover:translate-x-1 transition-all duration-300" href="#">Instagram</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary hover:translate-x-1 transition-all duration-300" href="#">TikTok</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary hover:translate-x-1 transition-all duration-300" href="#">LinkedIn</a>
+<h3 class="font-label-caps text-label-caps text-on-surface mt-8 mb-4">Legal</h3>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-tertiary hover:translate-x-1 transition-all duration-300" href="#">Privacy</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for fade-in animations on scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in-element');
+            fadeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body></html>

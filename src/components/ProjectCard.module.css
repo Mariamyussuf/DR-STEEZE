@@ -1,0 +1,108 @@
+.card {
+  display: block;
+  text-decoration: none;
+  color: var(--color-text);
+  cursor: pointer;
+  group: hover;
+}
+
+.imageWrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-low);
+  margin-bottom: 20px;
+}
+
+.aspectStandard {
+  aspect-ratio: 4 / 3;
+}
+
+.aspectTall {
+  aspect-ratio: 3 / 4;
+}
+
+.aspectSquare {
+  aspect-ratio: 1 / 1;
+}
+
+.aspectWide {
+  aspect-ratio: 16 / 9;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s ease;
+  filter: grayscale(15%) brightness(95%);
+}
+
+.card:hover .image {
+  transform: scale(1.05);
+  filter: grayscale(0%) brightness(105%);
+}
+
+.goldLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: var(--color-gold);
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .goldLine {
+  width: 100%;
+}
+
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-left: 4px;
+  border-left: 1px solid rgba(229, 226, 225, 0.15);
+  transition: border-color 0.4s ease;
+}
+
+.card:hover .metaRow {
+  border-left-color: var(--color-gold);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--color-text);
+  transition: color 0.4s ease;
+  margin-bottom: 4px;
+}
+
+.card:hover .title {
+  color: var(--color-gold);
+}
+
+.subCategory {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+.yearTag {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  padding: 4px 10px;
+  border: 1px solid var(--color-border);
+  transition: all 0.3s ease;
+}
+
+.card:hover .yearTag {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}

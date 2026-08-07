@@ -1,0 +1,500 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>DR STEEZE - Creative Director</title>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353434",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "background": "#141313",
+                        "surface-container-high": "#2b2a2a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-variant": "#353434",
+                        "surface": "#141313",
+                        "primary": "#c9c6c5",
+                        "on-secondary": "#2f3131",
+                        "on-background": "#e5e2e1",
+                        "tertiary": "#d7c3b0",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-tint": "#c9c6c5",
+                        "tertiary-container": "#140b03",
+                        "surface-bright": "#3a3939",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary-fixed": "#241a0e",
+                        "on-primary-container": "#7c7a7a",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-container": "#887867",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "on-primary": "#313030",
+                        "on-error": "#690005",
+                        "on-tertiary": "#3a2e21",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#5f5e5e",
+                        "tertiary-fixed": "#f4dfcb",
+                        "surface-dim": "#141313",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "secondary-container": "#454747",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#0d0d0d",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "outline": "#8e9192",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#e5e2e1",
+                        "outline-variant": "#444748",
+                        "secondary": "#c6c6c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "stack-sm": "12px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["60px", { "lineHeight": "68px", "fontWeight": "600" }],
+                        "display-lg": ["120px", { "lineHeight": "130px", "letterSpacing": "0.05em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Staggered delays */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        .delay-400 { transition-delay: 400ms; }
+
+        .ghost-button {
+            border: 1px solid theme('colors.on-surface');
+            color: theme('colors.on-surface');
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .ghost-button:hover {
+            background-color: theme('colors.on-surface');
+            color: theme('colors.background');
+        }
+        
+        .primary-button {
+            background-color: theme('colors.tertiary');
+            color: theme('colors.background');
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .primary-button:hover {
+            background-color: theme('colors.on-surface');
+            color: theme('colors.background');
+            transform: translateY(-2px);
+        }
+
+        .nav-scrolled {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background-color: rgba(20, 19, 19, 0.95);
+            border-bottom-color: rgba(215, 195, 176, 0.2);
+        }
+
+        .nav-transition {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .magnetic-wrap {
+            display: inline-block;
+        }
+
+        .text-shadow-deep {
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        
+        #webgl-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased selection:bg-tertiary selection:text-background overflow-x-hidden">
+<!-- TopNavBar Component -->
+<nav class="fixed top-0 w-full z-50 bg-background/0 backdrop-blur-md border-b border-transparent nav-transition" id="navbar">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-8 nav-transition w-full max-w-[1920px] mx-auto" id="nav-inner">
+<a class="font-headline-lg text-[24px] tracking-widest text-on-surface uppercase hover:text-tertiary transition-colors duration-300" href="#">DR STEEZE</a>
+<div class="hidden md:flex items-center gap-12">
+<a class="font-label-caps text-label-caps text-on-surface hover:text-tertiary transition-colors duration-300 relative group overflow-hidden" href="#">
+<span class="inline-block transition-transform duration-300 group-hover:-translate-y-full">Portfolio</span>
+<span class="inline-block absolute left-0 top-full transition-transform duration-300 group-hover:-translate-y-full text-tertiary">Portfolio</span>
+</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-tertiary transition-colors duration-300 relative group overflow-hidden" href="#">
+<span class="inline-block transition-transform duration-300 group-hover:-translate-y-full">About</span>
+<span class="inline-block absolute left-0 top-full transition-transform duration-300 group-hover:-translate-y-full text-tertiary">About</span>
+</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-tertiary transition-colors duration-300 relative group overflow-hidden" href="#">
+<span class="inline-block transition-transform duration-300 group-hover:-translate-y-full">Culture of Zion</span>
+<span class="inline-block absolute left-0 top-full transition-transform duration-300 group-hover:-translate-y-full text-tertiary">Culture of Zion</span>
+</a>
+<a class="font-label-caps text-label-caps text-on-surface hover:text-tertiary transition-colors duration-300 relative group overflow-hidden" href="#">
+<span class="inline-block transition-transform duration-300 group-hover:-translate-y-full">Contact</span>
+<span class="inline-block absolute left-0 top-full transition-transform duration-300 group-hover:-translate-y-full text-tertiary">Contact</span>
+</a>
+</div>
+<a class="hidden md:inline-block border border-on-surface/20 hover:border-tertiary font-label-caps text-label-caps px-6 py-3 uppercase transition-all duration-300 hover:text-tertiary" href="#">Work With Me</a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen w-full flex items-center justify-center overflow-hidden pt-24 md:pt-0 bg-background">
+<!-- WebGL Background -->
+<div id="webgl-container"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent z-10 pointer-events-none"></div>
+<div class="relative z-20 w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 gap-gutter text-center">
+<div class="flex flex-col items-center fade-in-up visible">
+<h1 class="font-display-lg-mobile text-[64px] md:font-display-lg text-on-surface text-shadow-deep mb-6 uppercase tracking-[0.1em]">DR STEEZE</h1>
+<div class="flex items-center gap-6 mb-12 fade-in-up delay-100">
+<div class="w-12 h-[1px] bg-tertiary/50 hidden md:block"></div>
+<h2 class="font-headline-lg text-[24px] md:text-[32px] text-tertiary italic font-light tracking-wide">Creative Director</h2>
+<div class="w-12 h-[1px] bg-tertiary/50 hidden md:block"></div>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface/80 max-w-xl text-center mb-16 fade-in-up delay-200 font-light leading-relaxed">
+                        Creating timeless stories through photography, filmmaking, and handcrafted design.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-8 justify-center w-full sm:w-auto fade-in-up delay-300">
+<div class="magnetic-wrap">
+<a class="primary-button font-label-caps text-label-caps px-10 py-5 uppercase text-center block tracking-widest" href="#portfolio">View Portfolio</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Scroll Indicator -->
+<div class="absolute bottom-12 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-4 fade-in-up delay-400">
+<span class="font-label-caps text-[10px] tracking-[0.2em] text-on-surface/60 uppercase">Scroll to explore</span>
+<div class="w-[1px] h-16 bg-gradient-to-b from-on-surface/40 to-transparent"></div>
+</div>
+</section>
+<!-- Featured Work Section (Editorial Grid Layout) -->
+<section class="w-full py-section-gap px-margin-mobile md:px-margin-desktop max-w-[1920px] mx-auto bg-background" id="portfolio">
+<div class="max-w-7xl mx-auto">
+<div class="flex items-end justify-between mb-24 fade-in-up">
+<h3 class="font-headline-xl text-[48px] md:text-[80px] tracking-tight">Featured Work</h3>
+<a class="hidden md:block font-label-caps text-label-caps text-tertiary hover:text-on-surface transition-colors pb-4 border-b border-tertiary/30 hover:border-on-surface" href="#">View Archive</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-32 gap-x-gutter">
+<!-- Large Feature Piece -->
+<div class="md:col-span-9 group cursor-pointer fade-in-up">
+<div class="w-full aspect-[4/3] md:aspect-[16/10] overflow-hidden bg-surface-container-low mb-8 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105" data-alt="A striking high-contrast fashion editorial photograph featuring an androgynous model in avant-garde black attire against a pure matte black seamless backdrop. Strong, directional rim lighting defines the silhouette, while the model's face remains partially obscured in shadow. The image exudes a quiet, timeless confidence typical of luxury brand campaigns. The overall aesthetic is stark, minimalist, and deeply cinematic, emphasizing form and texture over color." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCVpfa45nRefF-T2CTMiSJMMGjazLHTEQcqlRN4Dnjk0qJY5tRKshJ8fClt5_Pt_9pfaWWza9-sQs9e73FD6xmgxbiAcYWSJrrfJ2-15kk0_srEqYMel6ADHnbv4N7N00uxGIkh2tQ3RwnyqvYRgrF6bWOAsyHLxBDKUxO9_4ZDVUTUAHuFsy31nGW-pZhW34rp54f1MUO8tLm7EewfD5MJD5B89ZS_hnF1qYItlViDd-6ZO1Z3odKpAg')"></div>
+<div class="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+</div>
+<div class="flex justify-between items-start pl-4 border-l border-on-surface/20">
+<div>
+<h4 class="font-headline-lg text-[32px] md:text-[40px] group-hover:text-tertiary transition-colors duration-500">The Void Collection</h4>
+<p class="font-body-md text-body-md text-on-surface/60 mt-3 font-light">Cinematography &amp; Direction</p>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-widest mt-2">2024</div>
+</div>
+</div>
+<!-- Smaller Feature Piece 1 (Offset right) -->
+<div class="md:col-span-6 md:col-start-7 group cursor-pointer fade-in-up">
+<div class="w-full aspect-[3/4] overflow-hidden bg-surface-container-low mb-8 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105" data-alt="A beautifully composed still life photograph of handcrafted design objects resting on a textured dark slate surface. The lighting is soft and diffused, creating subtle gradients of gray and deep black across the objects. A single, thin beam of warm golden light cuts across the composition, highlighting a delicate metallic detail. The mood is serene, intentional, and highly curated, reflecting a sophisticated, minimalist design philosophy." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCcJ4DNjX0aRZSGqeXzSikKuPNVgtHbUr1ItTj9AYWbFz__aRmZpaHwWMQ9ra44QUMdRQCPU4_3DplxO-Kic1_kKPt3Qb1Ql2SLMNxupHLQVEO4h_7HX-2EJ8d2LgWXSEbMHmGECAiolTgLzqo7NM_UMGvxLUGp0a4GS8ybrQjX2DRffY9DuStcfGt3bBKF9lKkJsNLCCo2KM1pZHGJe4gA39oyja0pGjxshmGZkVO9X1oZr_BCugq2Yw')"></div>
+</div>
+<div class="flex justify-between items-start pl-4 border-l border-on-surface/20">
+<div>
+<h4 class="font-headline-lg text-[28px] md:text-[32px] group-hover:text-tertiary transition-colors duration-500">Tactile Silence</h4>
+<p class="font-body-md text-body-md text-on-surface/60 mt-3 font-light">Product Photography</p>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-widest mt-2">2024</div>
+</div>
+</div>
+<!-- Smaller Feature Piece 2 (Offset left) -->
+<div class="md:col-span-7 group cursor-pointer fade-in-up">
+<div class="w-full aspect-square md:aspect-[4/5] overflow-hidden bg-surface-container-low mb-8 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105" data-alt="A moody, architectural photograph capturing the stark geometry of a modern concrete building at dusk. The sky is a deep, almost black gradient, contrasting sharply with the pale, minimalist structure. Sharp shadows cut across the facades, emphasizing the precise angles and sheer scale of the design. The visual style is highly editorial, focusing on negative space and architectural precision." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDuHkgOBnF2fTH9pk-ZJdzuxLtl8On31u1Uj38E5M21ENk2GD2R-k2JtbqcHGWjddwewJhHPaMTHnLn8GsIvSgBleFODhuA76rdJJMXhN1bkdaciOPyECw5vH1L0VGrwlPVWTtxunkwhWE279o-Jy7CUzTrZAXvMRwHHY3kr6bgAvfKqdkj2b1eTDz9UTH7IGmWDDaVTH9_gVii9aQc77Bmdo4yy56N86ea977SIiuPXC1_MRjR5BD6jw')"></div>
+</div>
+<div class="flex justify-between items-start pl-4 border-l border-on-surface/20">
+<div>
+<h4 class="font-headline-lg text-[28px] md:text-[32px] group-hover:text-tertiary transition-colors duration-500">Brutalist Echoes</h4>
+<p class="font-body-md text-body-md text-on-surface/60 mt-3 font-light">Editorial Campaign</p>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-widest mt-2">2023</div>
+</div>
+</div>
+<!-- Medium Feature Piece full width -->
+<div class="md:col-span-12 group cursor-pointer fade-in-up">
+<div class="w-full aspect-[16/9] md:aspect-[21/9] overflow-hidden bg-surface-container-low mb-8 relative">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-1000 ease-out group-hover:scale-105" data-alt="An expansive, cinematic landscape shot taken at twilight. A solitary figure stands in the foreground, silhouetted against a vast, empty expanse of dark sand and distant mountains. The sky is an intense, monochromatic dark grey, lending the scene an otherworldly, isolated atmosphere. The composition is wide and sweeping, designed to evoke a sense of profound scale and emotional depth." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCBzvYNzHVQ-9M8VvfbSC-sZG3OlZ3KxShlBMA8SZQv_qcIX2wolbT9l4KTMVk-iHbzijK96yr0m-l7KxV73DHWDZF5mdIfkosRV4cMnmQV5RVTI_jRLxKkL9fdHZKWopJt2XbnGEmE0CwSu4RUFeiNr7E54tIQO3EU-IIzMcVmQEMkcyiemdu0UonVgp53R2S7-jca7mL5cK5MzXzpeEGAY7SlZBBSq9KSxQgLjiuhGdiKTqmaIm1kkA')"></div>
+</div>
+<div class="flex justify-between items-start pl-4 border-l border-on-surface/20">
+<div>
+<h4 class="font-headline-lg text-[32px] md:text-[40px] group-hover:text-tertiary transition-colors duration-500">Horizons</h4>
+<p class="font-body-md text-body-md text-on-surface/60 mt-3 font-light">Short Film</p>
+</div>
+<div class="font-label-caps text-label-caps text-on-surface/40 uppercase tracking-widest mt-2">2023</div>
+</div>
+</div>
+</div>
+<div class="mt-32 flex justify-center md:hidden fade-in-up">
+<a class="ghost-button font-label-caps text-label-caps px-8 py-4 uppercase tracking-widest" href="#">View Full Archive</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Component -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-[#0a0a0a] border-t border-on-surface/5">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-y-16 gap-x-gutter max-w-[1920px] mx-auto fade-in-up">
+<div class="md:col-span-8 flex flex-col justify-between">
+<div>
+<h2 class="font-display-lg text-[64px] md:text-[160px] tracking-tight leading-none text-on-surface mb-8">DR STEEZE</h2>
+<p class="font-body-md text-[18px] text-on-surface/60 max-w-md font-light leading-relaxed">
+                        Creative Direction &amp; Visual Storytelling. Available for select commissions globally.
+                    </p>
+</div>
+<div class="mt-24 font-label-caps text-[10px] tracking-[0.2em] text-on-surface/40 uppercase">
+                    © 2024 DR STEEZE. ALL RIGHTS RESERVED.
+                </div>
+</div>
+<div class="md:col-span-4 flex flex-col sm:flex-row justify-between md:justify-end gap-16 md:gap-32">
+<div class="flex flex-col gap-6">
+<h3 class="font-label-caps text-[10px] tracking-[0.2em] text-on-surface/40 uppercase mb-2">Connect</h3>
+<a class="font-body-md text-[16px] text-on-surface hover:text-tertiary hover:translate-x-2 transition-all duration-400 font-light" href="#">Instagram</a>
+<a class="font-body-md text-[16px] text-on-surface hover:text-tertiary hover:translate-x-2 transition-all duration-400 font-light" href="#">TikTok</a>
+<a class="font-body-md text-[16px] text-on-surface hover:text-tertiary hover:translate-x-2 transition-all duration-400 font-light" href="#">LinkedIn</a>
+<a class="font-body-md text-[16px] text-on-surface hover:text-tertiary hover:translate-x-2 transition-all duration-400 font-light" href="#">Vimeo</a>
+</div>
+<div class="flex flex-col gap-6">
+<h3 class="font-label-caps text-[10px] tracking-[0.2em] text-on-surface/40 uppercase mb-2">Legal</h3>
+<a class="font-body-md text-[16px] text-on-surface hover:text-tertiary transition-colors duration-400 font-light" href="#">Privacy</a>
+<a class="font-body-md text-[16px] text-on-surface hover:text-tertiary transition-colors duration-400 font-light" href="#">Terms</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+        // Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const fadeElements = document.querySelectorAll('.fade-in-up:not(.visible)');
+            fadeElements.forEach(el => observer.observe(el));
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            const navInner = document.getElementById('nav-inner');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('nav-scrolled');
+                    navInner.classList.remove('py-8');
+                    navInner.classList.add('py-4');
+                } else {
+                    navbar.classList.remove('nav-scrolled');
+                    navInner.classList.add('py-8');
+                    navInner.classList.remove('py-4');
+                }
+            });
+        });
+
+        // WebGL Setup for Background
+        const initWebGL = () => {
+            const container = document.getElementById('webgl-container');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            container.appendChild(renderer.domElement);
+
+            const geometry = new THREE.PlaneGeometry(2, 2);
+            
+            const uniforms = {
+                u_time: { value: 0 },
+                u_resolution: { value: new THREE.Vector2(window.innerWidth, window.innerHeight) },
+                u_mouse: { value: new THREE.Vector2(0.5, 0.5) }
+            };
+
+            const material = new THREE.ShaderMaterial({
+                uniforms: uniforms,
+                vertexShader: `
+                    varying vec2 v_texCoord;
+                    void main() {
+                        v_texCoord = uv;
+                        gl_Position = vec4(position, 1.0);
+                    }
+                `,
+                fragmentShader: `
+                    precision highp float;
+                    uniform float u_time;
+                    uniform vec2 u_resolution;
+                    uniform vec2 u_mouse;
+                    varying vec2 v_texCoord;
+
+                    // Simplex 2D noise
+                    vec3 permute(vec3 x) { return mod(((x*34.0)+1.0)*x, 289.0); }
+
+                    float snoise(vec2 v){
+                      const vec4 C = vec4(0.211324865405187, 0.366025403784439,
+                               -0.577350269189626, 0.024390243902439);
+                      vec2 i  = floor(v + dot(v, C.yy) );
+                      vec2 x0 = v -   i + dot(i, C.xx);
+                      vec2 i1;
+                      i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+                      vec4 x12 = x0.xyxy + C.xxzz;
+                      x12.xy -= i1;
+                      i   = mod(i, 289.0);
+                      vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+                      + i.x + vec3(0.0, i1.x, 1.0 ));
+                      vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy),
+                        dot(x12.zw,x12.zw)), 0.0);
+                      m = m*m ;
+                      m = m*m ;
+                      vec3 x = 2.0 * fract(p * C.www) - 1.0;
+                      vec3 h = abs(x) - 0.5;
+                      vec3 a0 = x - floor(x + 0.5);
+                      vec3 m0 = 1.0 - 1.5*(a0*a0 + h*h);
+                      vec3 g;
+                      g.x  = a0.x  * x0.x  + h.x  * x0.y;
+                      g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+                      return 130.0 * dot(m, g);
+                    }
+
+                    void main() {
+                        vec2 uv = v_texCoord;
+                        vec2 mouse = u_mouse / u_resolution;
+                        
+                        // Create liquid metal effect
+                        float n = snoise(uv * 3.0 + u_time * 0.2);
+                        n += 0.5 * snoise(uv * 6.0 - u_time * 0.3);
+                        
+                        // Distort UVs based on noise and mouse
+                        vec2 distortedUv = uv + n * 0.05 + (mouse - 0.5) * 0.02;
+                        
+                        // Calculate highlights for a chrome/liquid metal look
+                        float spec = pow(max(0.0, n), 8.0);
+                        float rim = 1.0 - max(0.0, dot(normalize(vec3(distortedUv, 1.0)), vec3(0.0, 0.0, 1.0)));
+                        rim = pow(rim, 3.0);
+                        
+                        // Deep matte black base with warm highlights
+                        vec3 baseColor = vec3(0.05, 0.05, 0.05); // Matte black
+                        vec3 highlightColor = vec3(0.8, 0.7, 0.5); // Warm beige/gold highlights
+                        
+                        vec3 finalColor = mix(baseColor, highlightColor, spec * 0.4 + rim * 0.2);
+                        
+                        // Add a bit of grain for editorial feel
+                        float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453) * 0.03;
+                        finalColor += grain;
+
+                        gl_FragColor = vec4(finalColor, 1.0);
+                    }
+                `
+            });
+
+            const mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            let mouseX = 0;
+            let mouseY = 0;
+            let targetX = 0;
+            let targetY = 0;
+
+            document.addEventListener('mousemove', (e) => {
+                mouseX = e.clientX;
+                mouseY = e.clientY;
+            });
+
+            const animate = () => {
+                requestAnimationFrame(animate);
+                
+                targetX += (mouseX - targetX) * 0.05;
+                targetY += (mouseY - targetY) * 0.05;
+
+                uniforms.u_time.value += 0.01;
+                uniforms.u_mouse.value.x = targetX;
+                uniforms.u_mouse.value.y = targetY;
+
+                renderer.render(scene, camera);
+            };
+
+            animate();
+
+            window.addEventListener('resize', () => {
+                renderer.setSize(window.innerWidth, window.innerHeight);
+                uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight);
+            });
+        };
+
+        if (typeof THREE !== 'undefined') {
+            initWebGL();
+        }
+    </script>
+</body></html>

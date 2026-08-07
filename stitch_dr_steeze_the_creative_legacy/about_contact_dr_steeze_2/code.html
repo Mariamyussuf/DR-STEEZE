@@ -1,0 +1,346 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>DR STEEZE - About &amp; Contact</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&amp;family=Inter:wght@400;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "outline-variant": "#444748",
+                "on-primary-fixed": "#1c1b1b",
+                "tertiary-fixed": "#f4dfcb",
+                "surface-container-lowest": "#0e0e0e",
+                "error-container": "#93000a",
+                "outline": "#8e9192",
+                "background": "#141313",
+                "inverse-primary": "#5f5e5e",
+                "surface-container": "#201f1f",
+                "tertiary": "#d7c3b0",
+                "error": "#ffb4ab",
+                "secondary-fixed-dim": "#c6c6c7",
+                "on-primary-fixed-variant": "#474646",
+                "surface-container-low": "#1c1b1b",
+                "surface-dim": "#141313",
+                "on-tertiary-fixed-variant": "#524436",
+                "on-secondary-container": "#b4b5b5",
+                "on-surface-variant": "#c4c7c7",
+                "on-surface": "#e5e2e1",
+                "tertiary-fixed-dim": "#d7c3b0",
+                "tertiary-container": "#140b03",
+                "on-secondary-fixed": "#1a1c1c",
+                "surface-bright": "#3a3939",
+                "on-tertiary-container": "#887867",
+                "primary-fixed-dim": "#c9c6c5",
+                "primary-container": "#0d0d0d",
+                "on-secondary": "#2f3131",
+                "surface": "#141313",
+                "surface-tint": "#c9c6c5",
+                "on-secondary-fixed-variant": "#454747",
+                "secondary": "#c6c6c7",
+                "on-primary-container": "#7c7a7a",
+                "surface-variant": "#353434",
+                "surface-container-high": "#2b2a2a",
+                "primary": "#c9c6c5",
+                "on-error-container": "#ffdad6",
+                "on-error": "#690005",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary-fixed": "#241a0e",
+                "on-tertiary": "#3a2e21",
+                "on-background": "#e5e2e1",
+                "secondary-container": "#454747",
+                "secondary-fixed": "#e2e2e2",
+                "on-primary": "#313030",
+                "inverse-on-surface": "#313030",
+                "primary-fixed": "#e5e2e1",
+                "surface-container-highest": "#353434"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-mobile": "24px",
+                "stack-sm": "12px",
+                "stack-md": "24px",
+                "section-gap": "160px",
+                "margin-desktop": "80px",
+                "gutter": "32px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "headline-xl": [
+                        "Playfair Display"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-xl": [
+                        "60px",
+                        {
+                                "lineHeight": "68px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "48px",
+                        {
+                                "lineHeight": "52px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "84px",
+                        {
+                                "lineHeight": "90px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .ghost-button {
+            border: 1px solid theme('colors.on-surface');
+            background: transparent;
+            color: theme('colors.on-surface');
+            transition: all 0.3s ease;
+        }
+        
+        .ghost-button:hover {
+            border-color: theme('colors.tertiary');
+            color: theme('colors.tertiary');
+            background: theme('colors.on-surface');
+            color: theme('colors.surface');
+        }
+
+        .input-underline {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid theme('colors.outline-variant');
+            border-radius: 0;
+            padding-left: 0;
+            padding-right: 0;
+            transition: all 0.3s ease;
+        }
+
+        .input-underline:focus {
+            outline: none;
+            box-shadow: none;
+            border-bottom-color: theme('colors.tertiary');
+        }
+        
+        .input-underline::placeholder {
+            color: theme('colors.on-surface');
+            opacity: 0.3;
+        }
+
+        /* Editorial Image Overlay Text */
+        .mix-blend-difference {
+            mix-blend-mode: difference;
+        }
+        
+        .social-link-large {
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .social-link-large:hover {
+            color: theme('colors.tertiary');
+            padding-left: 20px;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-background/80 backdrop-blur-xl font-label-caps text-label-caps text-primary fixed top-0 w-full z-50 border-b border-surface-container-high flex justify-between items-center px-margin-desktop py-6 w-full">
+<div class="font-headline-lg text-headline-lg tracking-tighter text-on-surface uppercase">DR STEEZE</div>
+<div class="hidden md:flex gap-8">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Portfolio</a>
+<a class="text-primary border-b border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Culture of Zion</a>
+<a class="text-primary border-b border-primary pb-1 hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<button class="ghost-button px-6 py-3 font-label-caps text-label-caps uppercase">Work With Me</button>
+</nav>
+<main class="flex-grow pt-[100px]">
+<!-- ABOUT SECTION - EDITORIAL FULL BLEED -->
+<section class="w-full relative min-h-[90vh] flex items-center mb-section-gap overflow-hidden">
+<!-- Background Image -->
+<div class="absolute inset-0 w-full h-full md:w-[70%] md:right-0 md:left-auto">
+<img class="w-full h-full object-cover grayscale opacity-80" data-alt="A striking, high-contrast, black-and-white editorial portrait of a creative director in a minimal studio setting. The subject is wearing avant-garde fashion, illuminated by dramatic, moody lighting against a stark matte black background. The overall aesthetic is cinematic, sophisticated, and deeply intentional, reflecting high-end luxury fashion." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbkc_kBKf5jN-YoRAnEJdFN55yZxjyRZHlV6fkW2TZDSZ-1bOIJPT2r4NCWPgCq3GMOwYg7wOvmffWws9BgQoS002Z3zM_tX_QrbIf7vS8-lP1wpGFSScr6Xtdy68PaMl1AzobhjULLiOsFT4SEkW3geEF8X9QRlmwxrTosc61Jq5kUZ_ltefWSUkhSoqSN2-zsd6Xu19fd2jUQYT4TY5-ZXxSmOOYMH3rh3jLdV-aWigsRJbNjTtK2A">
+<!-- Gradient Overlay for readability on left side -->
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/80 to-transparent"></div>
+</div>
+<!-- Content Overlapping -->
+<div class="relative z-10 w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop flex flex-col md:w-3/5">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface mb-8">The Visionary<br>Eye</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-12">
+            I am DR STEEZE, a Creative Director and visual storyteller dedicated to crafting high-fidelity narratives. My philosophy marries raw authenticity with editorial precision, creating a visual language that speaks volumes in its restraint. In a world saturated with noise, I seek the quiet power of intentional composition and masterful lighting.
+        </p>
+<div class="flex gap-4">
+<span class="px-6 py-3 border border-outline-variant text-on-surface font-label-caps text-label-caps uppercase tracking-[0.2em]">EST. 2015</span>
+<span class="px-6 py-3 border border-outline-variant text-on-surface font-label-caps text-label-caps uppercase tracking-[0.2em]">LONDON / TOKYO</span>
+</div>
+</div>
+</section>
+<!-- SERVICES SECTION - ULTRA MINIMAL -->
+<section class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop mb-section-gap">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 border-b border-outline-variant pb-8">
+<h2 class="font-display-lg text-[64px] md:text-[100px] text-on-surface leading-none -ml-1">Services</h2>
+<p class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest mb-2">Capabilities</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Service 1 -->
+<div class="group relative py-12 px-8 border border-outline-variant/30 hover:border-tertiary transition-colors duration-500 bg-surface-container-lowest">
+<span class="material-symbols-outlined text-3xl text-on-surface mb-16 block font-light opacity-50 group-hover:opacity-100 group-hover:text-tertiary transition-all duration-500" data-weight="fill" style="font-variation-settings: 'FILL' 1;">camera</span>
+<h3 class="font-headline-xl text-[40px] text-on-surface mb-6 font-light">Photography</h3>
+<p class="font-body-md text-body-md text-on-surface-variant/80 font-light">High-fashion editorial, intimate portraiture, and conceptual campaigns shot with meticulous attention to lighting and mood.</p>
+</div>
+<!-- Service 2 -->
+<div class="group relative py-12 px-8 border border-outline-variant/30 hover:border-tertiary transition-colors duration-500 bg-surface-container-lowest">
+<span class="material-symbols-outlined text-3xl text-on-surface mb-16 block font-light opacity-50 group-hover:opacity-100 group-hover:text-tertiary transition-all duration-500" data-weight="fill" style="font-variation-settings: 'FILL' 1;">movie</span>
+<h3 class="font-headline-xl text-[40px] text-on-surface mb-6 font-light">Filmmaking</h3>
+<p class="font-body-md text-body-md text-on-surface-variant/80 font-light">Cinematic storytelling, music videos, and brand films that leverage visual breathing room and high-contrast styling.</p>
+</div>
+<!-- Service 3 -->
+<div class="group relative py-12 px-8 border border-outline-variant/30 hover:border-tertiary transition-colors duration-500 bg-surface-container-lowest">
+<span class="material-symbols-outlined text-3xl text-on-surface mb-16 block font-light opacity-50 group-hover:opacity-100 group-hover:text-tertiary transition-all duration-500" data-weight="fill" style="font-variation-settings: 'FILL' 1;">design_services</span>
+<h3 class="font-headline-xl text-[40px] text-on-surface mb-6 font-light">Direction</h3>
+<p class="font-body-md text-body-md text-on-surface-variant/80 font-light">Holistic visual strategy, moodboarding, and on-set leadership to ensure every element aligns with the overarching brand narrative.</p>
+</div>
+</div>
+</section>
+<!-- CONTACT SECTION - SLEEK & HIGH CONTRAST -->
+<section class="w-full bg-surface-container-lowest py-section-gap border-y border-outline-variant/20">
+<div class="max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<!-- Left: Statement & Socials -->
+<div class="md:col-span-5 flex flex-col justify-between">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-surface leading-[0.9] mb-16">
+                Let's Create<br>Something<br><span class="italic text-tertiary">Iconic.</span>
+</h2>
+<!-- Sophisticated Vertical Social List -->
+<div class="flex flex-col gap-6 font-headline-lg text-[32px] font-light mt-auto">
+<a class="social-link-large text-on-surface flex items-center justify-between border-b border-outline-variant/30 pb-4" href="#">
+<span>Email</span>
+<span class="material-symbols-outlined text-xl opacity-0 hover:opacity-100 transition-opacity">arrow_forward</span>
+</a>
+<a class="social-link-large text-on-surface flex items-center justify-between border-b border-outline-variant/30 pb-4" href="#">
+<span>WhatsApp</span>
+<span class="material-symbols-outlined text-xl opacity-0 hover:opacity-100 transition-opacity">arrow_forward</span>
+</a>
+<a class="social-link-large text-on-surface flex items-center justify-between border-b border-outline-variant/30 pb-4" href="#">
+<span>Instagram</span>
+<span class="material-symbols-outlined text-xl opacity-0 hover:opacity-100 transition-opacity">arrow_forward</span>
+</a>
+<a class="social-link-large text-on-surface flex items-center justify-between border-b border-outline-variant/30 pb-4" href="#">
+<span>TikTok</span>
+<span class="material-symbols-outlined text-xl opacity-0 hover:opacity-100 transition-opacity">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Right: Minimal Form -->
+<div class="md:col-span-6 md:col-start-7 mt-16 md:mt-0">
+<form class="flex flex-col gap-12 bg-background p-10 md:p-16 border border-outline-variant/20 shadow-2xl">
+<div class="flex flex-col gap-4">
+<label class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Name</label>
+<input class="input-underline w-full font-body-lg text-body-lg text-on-surface pb-4 font-light bg-transparent" placeholder="John Doe" type="text">
+</div>
+<div class="flex flex-col gap-4">
+<label class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Email</label>
+<input class="input-underline w-full font-body-lg text-body-lg text-on-surface pb-4 font-light bg-transparent" placeholder="studio@example.com" type="email">
+</div>
+<div class="flex flex-col gap-4">
+<label class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Inquiry Type</label>
+<select class="input-underline w-full font-body-lg text-body-lg text-on-surface pb-4 font-light bg-transparent appearance-none">
+<option class="bg-surface-container-low text-on-surface">Photography</option>
+<option class="bg-surface-container-low text-on-surface">Filmmaking</option>
+<option class="bg-surface-container-low text-on-surface">Creative Direction</option>
+<option class="bg-surface-container-low text-on-surface">Other</option>
+</select>
+</div>
+<div class="flex flex-col gap-4">
+<label class="font-label-caps text-label-caps text-tertiary uppercase tracking-widest">Message</label>
+<textarea class="input-underline w-full font-body-lg text-body-lg text-on-surface pb-4 font-light bg-transparent resize-none" placeholder="Outline your vision..." rows="3"></textarea>
+</div>
+<button class="bg-on-surface text-surface py-5 font-label-caps text-label-caps uppercase mt-8 w-full hover:bg-tertiary transition-colors duration-300 tracking-widest" type="submit">Send Inquiry</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-background font-body-md text-body-md w-full py-24 px-margin-desktop border-t border-surface-container-high grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-7xl mx-auto">
+<div class="md:col-span-6 font-headline-xl text-headline-xl text-on-surface">DR STEEZE</div>
+<div class="md:col-span-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+<span class="text-on-surface-variant font-light text-sm tracking-wide">© 2024 DR STEEZE. ALL RIGHTS RESERVED.</span>
+<div class="flex gap-8">
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 font-label-caps text-[10px] tracking-widest uppercase" href="#">Instagram</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 font-label-caps text-[10px] tracking-widest uppercase" href="#">TikTok</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-colors duration-300 font-label-caps text-[10px] tracking-widest uppercase" href="#">LinkedIn</a>
+</div>
+</div>
+</footer>
+</body></html>

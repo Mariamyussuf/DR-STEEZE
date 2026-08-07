@@ -1,0 +1,283 @@
+<!DOCTYPE html><html class="dark scroll-smooth" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>DR STEEZE - Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-surface-variant": "#c4c7c7",
+                        "surface-container-low": "#1c1b1b",
+                        "on-primary-fixed-variant": "#474646",
+                        "on-secondary-fixed-variant": "#454747",
+                        "inverse-on-surface": "#313030",
+                        "surface-container-highest": "#353434",
+                        "secondary-fixed-dim": "#c6c6c7",
+                        "background": "#141313",
+                        "surface-container-high": "#2b2a2a",
+                        "surface-container-lowest": "#0e0e0e",
+                        "surface-variant": "#353434",
+                        "surface": "#141313",
+                        "primary": "#c9c6c5",
+                        "on-secondary": "#2f3131",
+                        "on-background": "#e5e2e1",
+                        "tertiary": "#d7c3b0",
+                        "on-secondary-fixed": "#1a1c1c",
+                        "surface-tint": "#c9c6c5",
+                        "tertiary-container": "#140b03",
+                        "surface-bright": "#3a3939",
+                        "on-secondary-container": "#b4b5b5",
+                        "on-tertiary-fixed": "#241a0e",
+                        "on-primary-container": "#7c7a7a",
+                        "secondary-fixed": "#e2e2e2",
+                        "on-surface": "#e5e2e1",
+                        "on-tertiary-container": "#887867",
+                        "tertiary-fixed-dim": "#d7c3b0",
+                        "on-primary": "#313030",
+                        "on-error": "#690005",
+                        "on-tertiary": "#3a2e21",
+                        "on-error-container": "#ffdad6",
+                        "error": "#ffb4ab",
+                        "inverse-primary": "#5f5e5e",
+                        "tertiary-fixed": "#f4dfcb",
+                        "surface-dim": "#141313",
+                        "inverse-surface": "#e5e2e1",
+                        "on-tertiary-fixed-variant": "#524436",
+                        "secondary-container": "#454747",
+                        "surface-container": "#201f1f",
+                        "primary-container": "#0d0d0d",
+                        "on-primary-fixed": "#1c1b1b",
+                        "primary-fixed-dim": "#c9c6c5",
+                        "outline": "#8e9192",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#e5e2e1",
+                        "outline-variant": "#444748",
+                        "secondary": "#c6c6c7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "section-gap": "160px",
+                        "stack-sm": "12px",
+                        "margin-mobile": "24px",
+                        "margin-desktop": "80px",
+                        "gutter": "32px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Playfair Display"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "display-lg-mobile": ["Playfair Display"],
+                        "body-md": ["Inter"],
+                        "headline-xl": ["Playfair Display"],
+                        "display-lg": ["Playfair Display"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["40px", { "lineHeight": "48px", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.15em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["48px", { "lineHeight": "52px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-xl": ["60px", { "lineHeight": "68px", "fontWeight": "600" }],
+                        "display-lg": ["84px", { "lineHeight": "90px", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Hide scrollbar for cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #141313; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #353434; 
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5f5e5e; 
+        }
+        
+        .parallax-img {
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .project-card:hover .parallax-img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface min-h-screen antialiased selection:bg-tertiary selection:text-background overflow-x-hidden">
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-white/5 transition-all duration-300">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full max-w-[1600px] mx-auto">
+<a class="font-headline-lg text-[28px] md:text-headline-lg tracking-tighter text-on-surface uppercase hover:opacity-70 transition-opacity" href="#">
+                DR STEEZE
+            </a>
+<nav class="hidden md:flex gap-12">
+<a class="font-label-caps text-label-caps text-primary border-b border-primary pb-1 uppercase tracking-widest" href="#">Portfolio</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-widest" href="#">About</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-widest" href="#">Culture of Zion</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors duration-300 uppercase tracking-widest" href="#">Contact</a>
+</nav>
+<a class="hidden md:inline-flex items-center justify-center border border-on-surface/30 text-on-surface font-label-caps text-label-caps px-8 py-3 uppercase hover:border-primary hover:text-primary transition-colors duration-300 tracking-widest" href="#">
+                Work With Me
+            </a>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</header>
+<main class="pt-32 md:pt-56 pb-section-gap px-margin-mobile md:px-margin-desktop max-w-[1600px] mx-auto">
+<!-- Minimalist Header & Philosophy -->
+<section class="mb-24 md:mb-40 grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-8 md:col-start-1 flex flex-col justify-end">
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-[100px] leading-none mb-10 text-on-surface tracking-tighter">Selected Works</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+                    Capturing the unseen narrative. A curation of visual explorations across photography, film, and editorial contexts, grounded in intentional minimalism and stark contrast.
+                </p>
+</div>
+</section>
+<!-- Category Filters (Ultra Minimal) -->
+<section class="mb-24 md:mb-40">
+<div class="flex flex-wrap gap-8 border-b border-white/10 pb-4">
+<button class="text-on-surface font-label-caps text-label-caps uppercase border-b-2 border-primary pb-2 tracking-widest transition-colors duration-300">All Work</button>
+<button class="text-on-surface-variant font-label-caps text-label-caps uppercase border-b-2 border-transparent pb-2 tracking-widest hover:text-on-surface transition-colors duration-300">Photography</button>
+<button class="text-on-surface-variant font-label-caps text-label-caps uppercase border-b-2 border-transparent pb-2 tracking-widest hover:text-on-surface transition-colors duration-300">Film</button>
+<button class="text-on-surface-variant font-label-caps text-label-caps uppercase border-b-2 border-transparent pb-2 tracking-widest hover:text-on-surface transition-colors duration-300">Commercial</button>
+<button class="text-on-surface-variant font-label-caps text-label-caps uppercase border-b-2 border-transparent pb-2 tracking-widest hover:text-on-surface transition-colors duration-300">Weddings</button>
+<button class="text-on-surface-variant font-label-caps text-label-caps uppercase border-b-2 border-transparent pb-2 tracking-widest hover:text-on-surface transition-colors duration-300">Fashion</button>
+<button class="text-on-surface-variant font-label-caps text-label-caps uppercase border-b-2 border-transparent pb-2 tracking-widest hover:text-on-surface transition-colors duration-300">Events</button>
+</div>
+</section>
+<!-- Broken Grid Layout -->
+<section class="flex flex-col gap-32 md:gap-48">
+<!-- Item 1: Wide Left -->
+<div class="project-card group relative w-full md:w-2/3 cursor-pointer">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[16/9]">
+<img class="parallax-img w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 ease-out" data-alt="A striking high-fashion editorial photograph in a minimalist studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeLfjFojBS8lCIK5uPWtEeoUCpjhNTUP_zjG7OKm8zbQ5lQwSfzPB9-LAAS5aPy9TlbvMIfIADzrwKGErXZ430nwe8M_lJ5HXGgflA5eoSpcDFGleS733H-HIOqwdeDsl5vMf5k0mfcKka37UnZZCroWQkAtX4pMMuUahyeTppZu4ogMoyoDHnfzs14t8Jr_EIzB5jR4IsVOxe0vBUuN4xwcjYCHq0THD1Y95M2p7ugUb6uNCVNbK4pA">
+<div class="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="absolute -top-12 -left-4 md:-left-12 z-10 pointer-events-none mix-blend-difference text-primary/80">
+<span class="font-headline-xl text-[80px] md:text-[140px] leading-none opacity-50">01</span>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Nocturne in Silence</h3>
+<span class="inline-block text-on-surface-variant font-label-caps text-[11px] uppercase tracking-widest">Fashion / 2024</span>
+</div>
+</div>
+</div>
+<!-- Item 2: Tall Right -->
+<div class="project-card group relative w-full md:w-1/2 md:ml-auto cursor-pointer">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[3/4]">
+<img class="parallax-img w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 ease-out" data-alt="A cinematic wide shot of an urban landscape at dusk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnc8oBD0klDUkJYyWrWW5xaEkimCyG5CNfYgiHWzOUkTvmfAxAtwDoFyzVoBIzKACiiEZerlJgmzxGeVjSq11EFO6rK5FkuHbwvTU9q3JCmhCS61aaRCzss8XsNzLrG6dDsauxlYRqFTpuNXtYgOk26FTFSdTAltOQea2qyBd51dDgt6fO0mlTzutlLMo5_Xp7Nhugq28vkJWrNyfVDnJBRiskBUSB42aIL1A4dAKUXC0FcM9-hucoZA">
+<div class="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="absolute -top-8 -right-4 md:-right-12 z-10 pointer-events-none mix-blend-difference text-primary/80 text-right">
+<span class="font-headline-xl text-[80px] md:text-[140px] leading-none opacity-50">02</span>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg text-[32px] text-on-surface mb-2">Concrete Veins</h3>
+<span class="inline-block text-on-surface-variant font-label-caps text-[11px] uppercase tracking-widest">Film / 2023</span>
+</div>
+</div>
+</div>
+<!-- Item 3: Center Square -->
+<div class="project-card group relative w-full md:w-7/12 mx-auto cursor-pointer">
+<div class="relative overflow-hidden bg-surface-container-low aspect-square">
+<img class="parallax-img w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 ease-out" data-alt="An intimate, documentary-style wedding portrait shot on 35mm film grain." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5jwDC5FTWrQlypba9e8CPJ-1ALCjSj76eptnGsYEbdKGUHFMnSoy3ueFOiGx3-Vk_A9FlYC_Kersy2pCRNnxs4m_Ad5wnDRRBmkEHe5EWknxbD2g_CONAeGv8Pk-qpxYVO2NtZCrkFukbxBk51TZHnsTd1KbqGBwougq3jVc1ZPUw7EmGJHRLAEQlKLITuCK65Jzk-XP-xkBaaZdlLuWWZrv0yw_6CQwmRrrRAVKDRji4mK_ur57HzA">
+<div class="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="absolute top-1/2 -left-6 md:-left-24 -translate-y-1/2 z-10 pointer-events-none mix-blend-difference text-primary/80">
+<span class="font-headline-xl text-[80px] md:text-[160px] leading-none opacity-50">03</span>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">The Vow</h3>
+<span class="inline-block text-on-surface-variant font-label-caps text-[11px] uppercase tracking-widest">Weddings / 2023</span>
+</div>
+</div>
+</div>
+<!-- Item 4: Small Left -->
+<div class="project-card group relative w-full md:w-5/12 md:mr-auto cursor-pointer">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[4/5]">
+<img class="parallax-img w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 ease-out" data-alt="A commercial still life product shot of a luxury matte-black perfume bottle." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNAjdSzskuI-fIqmDewAPEAjuddmYkdJin0oNVdwxbOjDk4oMG444M7PCrzOIeFT2Vvf0-7KMq2VEPJ183wNKdjeqXNBp-f_49pZ6du7Vf8VT554Q7UF9_4uX2BOoQV174K8C2gm2cAazMM21jXEV5ezlaVUPcEFyLdEVkTADSjeQBqEl_349gD7Xcx35VF4t1qPsLmNgdB2UJLiRMIUleCNdCyJqAPrnadqnv3J4d6QByHYFoR97Lag">
+<div class="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="absolute -bottom-8 -right-4 md:-right-16 z-10 pointer-events-none mix-blend-difference text-primary/80 text-right">
+<span class="font-headline-xl text-[80px] md:text-[120px] leading-none opacity-50">04</span>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg text-[28px] text-on-surface mb-2">Essence &amp; Stone</h3>
+<span class="inline-block text-on-surface-variant font-label-caps text-[11px] uppercase tracking-widest">Commercial / 2024</span>
+</div>
+</div>
+</div>
+<!-- Item 5: Wide Right -->
+<div class="project-card group relative w-full md:w-3/4 md:ml-auto cursor-pointer">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[21/9]">
+<img class="parallax-img w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 ease-out" data-alt="An expansive event photography shot capturing a high-end gala." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHv0OSzAy4JSdWn96lhGdyTsrSfxivXODumDNEcwM5L4CF_JO7kDfkvMz-jC9uTu6pcT-VpUFg0nB09vAerj8OVkw6R2icsmS4VU5oi-uBrz1fjTAq8sJC2fd1sjdFNlg6rAbrkd5R5nOV71sPYSOCem6B3myfKo7dxJu44bIxx-cV8KIV9AHw0AQW97pDjNaFZeL1zq3d8LaSm22FaahWU_8Bqi5aOKDrQty7n4QV_-6QDEHj5Md5ag">
+<div class="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="absolute -top-10 left-4 md:left-12 z-10 pointer-events-none mix-blend-difference text-primary/80">
+<span class="font-headline-xl text-[80px] md:text-[140px] leading-none opacity-50">05</span>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg text-headline-lg text-on-surface mb-2">Midnight Gala</h3>
+<span class="inline-block text-on-surface-variant font-label-caps text-[11px] uppercase tracking-widest">Events / 2023</span>
+</div>
+</div>
+</div>
+<!-- Item 6: Portrait Offset -->
+<div class="project-card group relative w-full md:w-1/3 md:ml-[15%] cursor-pointer">
+<div class="relative overflow-hidden bg-surface-container-low aspect-[2/3]">
+<img class="parallax-img w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-700 ease-out" data-alt="A striking portrait photography shot focusing heavily on texture and form." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCz5Gxg2fQ78_-Ner9Z134SfyWiUMwdw1sqMK-PsOjK5vQrVaZUJCokzNYozQdLnySjadoq1MbanzWkH8Q2JOWwPobBCbi5DdXldbSd1MqOm-aBrml_72p7QqFOzWR-LVZ_Iags-eWbJLxXcxKtW-t-E6NucS80i-5C6IR1PM1mFNq_LXtQNbN3_kChD1nJz7pcvIyPGRqmkY-_Ko7eJDzJdwCAW6ux33outTpq7u-pMt2ZniZBfSnJ2w">
+<div class="absolute inset-0 bg-background/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+</div>
+<div class="absolute top-1/4 -right-8 md:-right-24 z-10 pointer-events-none mix-blend-difference text-primary/80 text-right">
+<span class="font-headline-xl text-[80px] md:text-[140px] leading-none opacity-50">06</span>
+</div>
+<div class="mt-8 flex justify-between items-end">
+<div>
+<h3 class="font-headline-lg text-[28px] text-on-surface mb-2">Woven Shadows</h3>
+<span class="inline-block text-on-surface-variant font-label-caps text-[11px] uppercase tracking-widest">Photography / 2024</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop bg-background border-t border-white/5 mt-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-[1600px] mx-auto">
+<div class="col-span-1 md:col-span-12 mb-16">
+<h2 class="font-headline-xl text-headline-xl md:text-[120px] leading-none text-on-surface tracking-tighter">DR STEEZE</h2>
+</div>
+<div class="col-span-1 md:col-span-6 flex flex-col justify-end gap-4">
+<p class="font-body-md text-body-md text-tertiary/60 tracking-wider">© 2024 DR STEEZE. ALL RIGHTS RESERVED.</p>
+</div>
+<div class="col-span-1 md:col-span-6 flex flex-wrap gap-8 justify-start md:justify-end items-end">
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest" href="#">Instagram</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest" href="#">TikTok</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest" href="#">LinkedIn</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary hover:-translate-y-1 transition-all duration-300 uppercase tracking-widest" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>

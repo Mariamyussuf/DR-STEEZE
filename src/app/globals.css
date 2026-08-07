@@ -1,0 +1,254 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap');
+
+:root {
+  --color-bg: #0D0D0D;
+  --color-surface: #141313;
+  --color-surface-low: #1C1B1B;
+  --color-surface-high: #2B2A2A;
+  --color-text: #E5E2E1;
+  --color-text-muted: #C4C7C7;
+  --color-text-subtle: #8E9192;
+  --color-tertiary: #D7C3B0;
+  --color-gold: #C5A059;
+  --color-gold-hover: #DFB76C;
+  --color-border: rgba(215, 195, 176, 0.15);
+  --color-border-subtle: rgba(229, 226, 225, 0.1);
+  --color-border-gold: rgba(197, 160, 89, 0.4);
+
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --spacing-desktop-margin: 80px;
+  --spacing-mobile-margin: 20px;
+  --spacing-gutter: 32px;
+  --spacing-section-gap: 140px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Prevent mobile iOS zoom on form inputs */
+input, select, textarea {
+  font-size: 16px !important;
+}
+
+/* Material Symbols Outlined */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-gold);
+  color: var(--color-bg);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-high);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold);
+}
+
+/* Global Typography Classes */
+.display-title {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 8vw, 96px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.headline-xl {
+  font-family: var(--font-heading);
+  font-size: clamp(30px, 5vw, 64px);
+  font-weight: 600;
+  line-height: 1.15;
+}
+
+.headline-lg {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 3.5vw, 42px);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.label-caps {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.body-lg {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--color-text-muted);
+}
+
+.body-md {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.8vw, 16px);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-muted);
+}
+
+/* Buttons */
+.primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 32px;
+  background-color: var(--color-tertiary);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--color-tertiary);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.primary-button:hover {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(197, 160, 89, 0.2);
+}
+
+.ghost-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 14px 32px;
+  background-color: transparent;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 1px solid var(--color-border-subtle);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 0;
+  white-space: nowrap;
+}
+
+.ghost-button:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+  background-color: rgba(197, 160, 89, 0.05);
+}
+
+/* Noise overlay */
+.noise-bg {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Container */
+.container-custom {
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-desktop-margin);
+  padding-right: var(--spacing-desktop-margin);
+}
+
+@media (max-width: 768px) {
+  :root {
+    --spacing-section-gap: 90px;
+  }
+
+  .container-custom {
+    padding-left: var(--spacing-mobile-margin);
+    padding-right: var(--spacing-mobile-margin);
+  }
+
+  .primary-button, .ghost-button {
+    width: 100%;
+  }
+}
+
+/* Animations */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-up.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }

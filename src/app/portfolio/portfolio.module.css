@@ -1,0 +1,187 @@
+.portfolioHeader {
+  padding-top: 160px;
+  padding-bottom: 48px;
+  background-color: var(--color-bg);
+  border-bottom: 1px solid rgba(229, 226, 225, 0.08);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(36px, 8vw, 84px);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 16px;
+}
+
+.subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 300;
+  color: var(--color-text-muted);
+  max-width: 680px;
+  line-height: 1.8;
+}
+
+.filtersSection {
+  padding-top: 36px;
+  padding-bottom: 36px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  align-items: center;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.filtersSection::-webkit-scrollbar {
+  display: none;
+}
+
+.filterBtn {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid transparent;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 0;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.filterBtn:hover {
+  color: var(--color-text);
+  border-color: rgba(229, 226, 225, 0.2);
+}
+
+.activeFilter {
+  color: var(--color-bg) !important;
+  background-color: var(--color-tertiary) !important;
+  border-color: var(--color-tertiary) !important;
+}
+
+/* Masonry Grid */
+.masonryGrid {
+  column-count: 3;
+  column-gap: var(--spacing-gutter);
+  padding-bottom: var(--spacing-section-gap);
+}
+
+.masonryItem {
+  break-inside: avoid;
+  margin-bottom: var(--spacing-gutter);
+  transition: all 0.4s ease;
+}
+
+/* Modal Case Study Overlay */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(10, 10, 10, 0.96);
+  backdrop-filter: blur(20px);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.modalContent {
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 48px;
+  position: relative;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: var(--color-surface-high);
+  border: 1px solid var(--color-border);
+  color: var(--color-text);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+.closeBtn:hover {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.modalImage {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  margin-bottom: 32px;
+}
+
+.modalMeta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: 20px 0;
+  margin-bottom: 28px;
+}
+
+.metaLabel {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+}
+
+.metaValue {
+  font-size: 15px;
+  color: var(--color-text);
+  margin-top: 4px;
+}
+
+@media (max-width: 1024px) {
+  .masonryGrid {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 640px) {
+  .masonryGrid {
+    column-count: 1;
+  }
+
+  .portfolioHeader {
+    padding-top: 120px;
+  }
+
+  .modalContent {
+    padding: 24px;
+  }
+
+  .modalImage {
+    height: 260px;
+    margin-bottom: 20px;
+  }
+
+  .modalMeta {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}

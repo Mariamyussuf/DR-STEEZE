@@ -1,0 +1,119 @@
+.footer {
+  width: 100%;
+  background-color: #0A0A0A;
+  border-top: 1px solid rgba(229, 226, 225, 0.08);
+  padding-top: var(--spacing-section-gap);
+  padding-bottom: 80px;
+  position: relative;
+  z-index: 10;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-gutter);
+}
+
+.mainCol {
+  grid-column: span 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.linksCol {
+  grid-column: span 5;
+  display: flex;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 9vw, 130px);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--color-text);
+  margin-bottom: 32px;
+}
+
+.subtext {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--color-text-muted);
+  max-width: 420px;
+  line-height: 1.7;
+}
+
+.socialGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.groupTitle {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-text-subtle);
+  margin-bottom: 8px;
+}
+
+.socialLink {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--color-text);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-block;
+}
+
+.socialLink:hover {
+  color: var(--color-gold);
+  transform: translateX(6px);
+}
+
+.bottomRow {
+  margin-top: 100px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(229, 226, 225, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--color-text-subtle);
+  text-transform: uppercase;
+}
+
+.cultureBadge {
+  color: var(--color-tertiary);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cultureBadge:hover {
+  color: var(--color-gold);
+}
+
+@media (max-width: 900px) {
+  .mainCol,
+  .linksCol {
+    grid-column: span 12;
+  }
+
+  .linksCol {
+    margin-top: 48px;
+  }
+
+  .bottomRow {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}

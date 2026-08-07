@@ -1,0 +1,305 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Culture of Zion - DR STEEZE</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Playfair+Display:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "outline-variant": "#444748",
+                "on-primary-fixed": "#1c1b1b",
+                "tertiary-fixed": "#f4dfcb",
+                "surface-container-lowest": "#0e0e0e",
+                "error-container": "#93000a",
+                "outline": "#8e9192",
+                "background": "#141313",
+                "inverse-primary": "#5f5e5e",
+                "surface-container": "#201f1f",
+                "tertiary": "#d7c3b0",
+                "error": "#ffb4ab",
+                "secondary-fixed-dim": "#c6c6c7",
+                "on-primary-fixed-variant": "#474646",
+                "surface-container-low": "#1c1b1b",
+                "surface-dim": "#141313",
+                "on-tertiary-fixed-variant": "#524436",
+                "on-secondary-container": "#b4b5b5",
+                "on-surface-variant": "#c4c7c7",
+                "on-surface": "#e5e2e1",
+                "tertiary-fixed-dim": "#d7c3b0",
+                "tertiary-container": "#140b03",
+                "on-secondary-fixed": "#1a1c1c",
+                "surface-bright": "#3a3939",
+                "on-tertiary-container": "#887867",
+                "primary-fixed-dim": "#c9c6c5",
+                "primary-container": "#0d0d0d",
+                "on-secondary": "#2f3131",
+                "surface": "#141313",
+                "surface-tint": "#c9c6c5",
+                "on-secondary-fixed-variant": "#454747",
+                "secondary": "#c6c6c7",
+                "on-primary-container": "#7c7a7a",
+                "surface-variant": "#353434",
+                "surface-container-high": "#2b2a2a",
+                "primary": "#c9c6c5",
+                "on-error-container": "#ffdad6",
+                "on-error": "#690005",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary-fixed": "#241a0e",
+                "on-tertiary": "#3a2e21",
+                "on-background": "#e5e2e1",
+                "secondary-container": "#454747",
+                "secondary-fixed": "#e2e2e2",
+                "on-primary": "#313030",
+                "inverse-on-surface": "#313030",
+                "primary-fixed": "#e5e2e1",
+                "surface-container-highest": "#353434",
+                "gold": "#d7c3b0"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "margin-mobile": "24px",
+                "stack-sm": "12px",
+                "stack-md": "24px",
+                "section-gap": "160px",
+                "margin-desktop": "80px",
+                "gutter": "32px"
+        },
+        "fontFamily": {
+                "body-lg": [
+                        "Inter"
+                ],
+                "headline-lg": [
+                        "Playfair Display"
+                ],
+                "headline-xl": [
+                        "Playfair Display"
+                ],
+                "display-lg-mobile": [
+                        "Playfair Display"
+                ],
+                "label-caps": [
+                        "Inter"
+                ],
+                "display-lg": [
+                        "Playfair Display"
+                ],
+                "body-md": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "32px",
+                                "letterSpacing": "0.01em",
+                                "fontWeight": "400"
+                        }
+                ],
+                "headline-lg": [
+                        "40px",
+                        {
+                                "lineHeight": "48px",
+                                "fontWeight": "500"
+                        }
+                ],
+                "headline-xl": [
+                        "60px",
+                        {
+                                "lineHeight": "68px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "48px",
+                        {
+                                "lineHeight": "52px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "label-caps": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "letterSpacing": "0.15em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "display-lg": [
+                        "84px",
+                        {
+                                "lineHeight": "90px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-surface');
+            -webkit-font-smoothing: antialiased;
+        }
+        .ghost-button {
+            border: 1px solid theme('colors.on-surface');
+            transition: all 0.3s ease;
+        }
+        .ghost-button:hover {
+            border-color: theme('colors.gold');
+            color: theme('colors.gold');
+        }
+        .noise-overlay {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.4;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            mix-blend-mode: overlay;
+        }
+        .hide-scroll-bar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .hide-scroll-bar::-webkit-scrollbar {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface overflow-x-hidden relative">
+<div class="noise-overlay fixed inset-0 w-full h-full"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 border-b border-tertiary/10 bg-background/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-6 w-full">
+<a class="font-headline-lg text-headline-lg tracking-tighter text-on-surface uppercase" href="#">
+                DR STEEZE
+            </a>
+<div class="hidden md:flex gap-gutter items-center font-label-caps text-label-caps">
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Portfolio</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">About</a>
+<a class="text-primary border-b border-primary pb-1 opacity-70 transition-opacity" href="#">Culture of Zion</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors duration-300" href="#">Contact</a>
+</div>
+<a class="hidden md:inline-block ghost-button font-label-caps text-label-caps px-6 py-3 uppercase" href="#">
+                Work With Me
+            </a>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+</nav>
+<main class="relative z-10">
+<!-- Hero Section -->
+<section class="min-h-screen flex items-center justify-center pt-[100px] px-margin-mobile md:px-margin-desktop relative">
+<div class="absolute inset-0 z-0">
+<img alt="A cinematic, high-fashion editorial photograph of a model wearing avant-garde, structural clothing standing in a stark, minimalist concrete space. The lighting is moody and dramatic with deep shadows and soft beige highlights. The overall aesthetic is dark, luxurious, and highly curated, fitting for a premium creative director's portfolio. The atmosphere is quiet yet intense." class="w-full h-full object-cover opacity-50" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCBo07gyORjEYZ_J2zAIMAGHFEKu3GOdWo4HQnCAGGbVe0q5kEikoVH6m_Q8HRCA5sVEeC1p10onGz63V1VCypBhERT_jmecbStyjkxyrvNmL9guA4jVpBfVc4-MlJC_TimgWfNIAm1BrXIQwb6uT9_tpBiFuctY3Atvr5T630eY2yw62dake0Jn0-e4opLs0qnYpvnAr7uLzju60DEH5auAwq9308sVQs_0BdQpHe_4B064vkk4ATkw">
+<div class="absolute inset-0 bg-gradient-to-b from-background/80 via-background/20 to-background"></div>
+</div>
+<div class="z-10 text-center max-w-4xl mx-auto space-y-stack-md">
+<div class="inline-block px-4 py-2 border border-tertiary/30 rounded-none mb-4">
+<span class="font-label-caps text-label-caps text-on-surface uppercase">A Signature Venture</span>
+</div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-on-surface">CULTURE OF ZION</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                    Where high-fashion sensibility meets uncompromising artisanal craftsmanship. A study in prestige, intentionality, and timeless elegance.
+                </p>
+<div class="pt-8">
+<a class="inline-block ghost-button font-label-caps text-label-caps px-8 py-4 uppercase" href="#story">Explore the Collection</a>
+</div>
+</div>
+</section>
+<!-- Storytelling Split Section -->
+<section class="py-section-gap px-margin-mobile md:px-margin-desktop bg-surface" id="story">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-margin-desktop items-center">
+<div class="h-[600px] relative overflow-hidden group">
+<img alt="A high-contrast black and white photograph of an artisan's hands carefully shaping leather over a wooden shoe last." class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA66XWH4_xkdVhyf8-TznV-x16OCw3ET7xYGiq_JWmWj3Bf-xgEoJVDRsZg2fs6r_fJFIuxnM-zsLLJtd_F4-rrSm_6UQUnWlin5W3zCgn-NLIBPgKKGwCIL7G_j-KOiO6Lw_Y2aYb9h47hzseov534M9_snyr1RDVIvsU3futbaQV-OCe2xIRcZm7d0UMBtCYy6PPIgFOpeKoRGwiZ9WNpviUPWv6Asl-zp0Cz0fTyIGmdKBa45dDt6w">
+<div class="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none"></div>
+</div>
+<div class="space-y-stack-md md:pl-gutter">
+<span class="font-label-caps text-label-caps text-tertiary uppercase block">The Origin</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Forged in Tradition</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    Culture of Zion represents a return to true luxury. We reject mass production in favor of absolute meticulousness. Each pair is built by master cordwainers using techniques refined over centuries, ensuring a product that not only endures but improves with the passage of time.
+                </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+                    It is an ethos—a dedication to the art of the perfect stitch, the flawless cut, and the finest materials sourced globally.
+                </p>
+</div>
+</div>
+</section>
+<!-- Gallery Horizontal Scroll -->
+<section class="py-section-gap" id="gallery">
+<div class="px-margin-mobile md:px-margin-desktop mb-margin-desktop max-w-7xl mx-auto text-center">
+<span class="font-label-caps text-label-caps text-tertiary uppercase block mb-4">The Archive</span>
+<h2 class="font-headline-xl text-headline-xl text-on-surface">Artisanal Precision</h2>
+</div>
+<div class="flex overflow-x-auto hide-scroll-bar gap-gutter px-margin-mobile md:px-margin-desktop snap-x snap-mandatory">
+<!-- Item 1 -->
+<div class="flex-none w-[85vw] md:w-[60vw] h-[70vh] relative group overflow-hidden snap-center">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" data-alt="An ultra-close-up, high-fidelity macro shot of a handmade leather shoe being stitched. The focus is incredibly sharp on the golden thread piercing the rich, dark brown textured leather. The background is a soft, deep matte black blur. The lighting highlights the fine details of the craftsmanship, emphasizing a luxury editorial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxgdyI8WodjszmYbC9YwHU9_Ky5bHt5_3r7q62YFXS8SxpvW3bnVx5gdmfbGbyYriDY6vl3qDgqUePu7Z5moOLERALHVxAIhm9KYIRKdKpng6joJgGg38yQiOM2ikRBrBx18w2Wjf37iPKDcD5SXU6J_3988pgtjtVO9tlO3x6meBzpFi76GnxJLOzq4qphglkBPa1Tnm5sNgweRMpUvtbhwuF-006F5q4LFU28N6K0TZ-sZc6_Qiq4w">
+<div class="absolute bottom-0 left-0 p-8 md:p-12 w-full bg-gradient-to-t from-background to-transparent">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">The Stitch</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-md">The foundation of durability, executed with golden thread.</p>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex-none w-[85vw] md:w-[60vw] h-[70vh] relative group overflow-hidden snap-center">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" data-alt="A stylish flat lay photograph of shoemaking tools—awls, leather shears, and spools of golden thread—arranged meticulously on a matte black cutting mat. The lighting is soft and cinematic, casting elegant, subtle shadows. The composition is minimal and organized, reflecting a high-end designer's workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA16PNsvv27Ry5ZRX13fkHL2OrHhE1cPUNbSp6eZOj5m-bh1qvmty8oe1Apgi09Zjd1Ea-18AODHnlqve_IM7g_LmrpzYWttYdYbwVvgRFLIFdoN75hRcNtEQgy46Yt_ioIj9IiFVzTwC7-CPhHvGGRJLiJ8REgqdDWA9zc96kRfOD_B42Ybr6rfygkZXg5RukzR7w4MQaXYDw55zN67knsArHoPk6IQiOSkRbLj3dGH7Cy-vfwJTRqPg">
+<div class="absolute bottom-0 left-0 p-8 md:p-12 w-full bg-gradient-to-t from-background to-transparent">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">The Instruments</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-md">Precision tools for an exacting craft.</p>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex-none w-[85vw] md:w-[60vw] h-[70vh] relative group overflow-hidden snap-center">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 opacity-80 group-hover:opacity-100" data-alt="A moody, high-contrast portrait of a finished luxury shoe resting on a rough-hewn stone pedestal against a completely black background. A single, focused beam of warm light hits the polished leather, creating a museum-like gallery feel. The aesthetic is stark, sophisticated, and undeniably premium." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPP2SRd8w-RWTfPt9Oq9EHQTv0oS8gWWY8QRFFnLIXo0RkAwnjUKyHruGNLJDE2JgUz8hj6cc6NtcsB0dubUCpspIOIVYQDV2k3ji9YkqPe5DGdtKVeDFS6GzIkbDwZD9GUqJG1l1JJ3XKz9_W0om4PYl_wGBrnwERouAINu4ygsY22TJ_Zdds66_iKnj0wArXbGUrkdQ8mFIx97ao6a6yMhVivVO9eyEcqOurqlHbU8ZB-zDn2tY25A">
+<div class="absolute bottom-0 left-0 p-8 md:p-12 w-full bg-gradient-to-t from-background to-transparent">
+<h3 class="font-headline-lg text-headline-lg text-on-surface">The Form</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2 max-w-md">A finished silhouette, ready to define its wearer.</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-section-gap px-margin-mobile md:px-margin-desktop border-t border-outline-variant bg-background relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter max-w-7xl mx-auto">
+<div class="md:col-span-6 flex flex-col justify-between">
+<a class="font-headline-xl text-headline-xl text-on-surface uppercase block mb-8" href="#">
+                    DR STEEZE
+                </a>
+<p class="font-body-md text-body-md text-tertiary">
+                    © 2024 DR STEEZE. ALL RIGHTS RESERVED.
+                </p>
+</div>
+<div class="md:col-span-6 flex justify-end md:items-end flex-col gap-4 font-body-md text-body-md text-on-surface-variant">
+<a class="hover:text-tertiary-fixed-dim transition-all hover:translate-x-1 duration-300 block" href="#">Instagram</a>
+<a class="hover:text-tertiary-fixed-dim transition-all hover:translate-x-1 duration-300 block" href="#">TikTok</a>
+<a class="hover:text-tertiary-fixed-dim transition-all hover:translate-x-1 duration-300 block" href="#">LinkedIn</a>
+<a class="hover:text-tertiary-fixed-dim transition-all hover:translate-x-1 duration-300 block" href="#">Privacy</a>
+</div>
+</div>
+</footer>
+</body></html>
