@@ -8,7 +8,6 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [theme, setTheme] = useState('dark');
   const pathname = usePathname();
 
   useEffect(() => {
@@ -21,17 +20,9 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'dark';
-    setTheme(savedTheme);
-    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.documentElement.removeAttribute('data-theme');
+    localStorage.removeItem('theme');
   }, []);
-
-  const toggleTheme = () => {
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-    setTheme(nextTheme);
-    localStorage.setItem('theme', nextTheme);
-    document.documentElement.setAttribute('data-theme', nextTheme);
-  };
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -73,17 +64,6 @@ export default function Navbar() {
           </div>
 
           <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <button
-              onClick={toggleTheme}
-              className={styles.themeBtn}
-              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
-              aria-label="Toggle theme"
-            >
-              <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>
-                {theme === 'dark' ? 'light_mode' : 'dark_mode'}
-              </span>
-            </button>
-
             <Link href="/contact" className={`ghost-button ${styles.ctaBtn}`}>
               Work With Me
             </Link>
