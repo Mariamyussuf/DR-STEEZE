@@ -86,13 +86,15 @@ export default function PortfolioPage() {
 
             {selectedProject.video ? (
               <video
-                src={selectedProject.video}
                 poster={selectedProject.image}
                 controls
                 autoPlay
                 playsInline
+                preload="auto"
                 className={styles.modalImage}
-              />
+              >
+                <source src={selectedProject.video} type="video/mp4" />
+              </video>
             ) : (
               <img
                 src={selectedProject.image}

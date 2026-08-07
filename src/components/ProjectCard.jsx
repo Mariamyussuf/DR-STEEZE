@@ -18,14 +18,16 @@ export default function ProjectCard({ project, aspect = 'standard' }) {
       <div className={`${styles.imageWrapper} ${aspectClass}`}>
         {project.video ? (
           <video
-            src={project.video}
             poster={project.image}
             autoPlay
             loop
             muted
             playsInline
+            preload="auto"
             className={styles.image}
-          />
+          >
+            <source src={project.video} type="video/mp4" />
+          </video>
         ) : (
           <img
             src={project.image}
