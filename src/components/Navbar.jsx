@@ -8,6 +8,7 @@ import styles from './Navbar.module.css';
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [theme, setTheme] = useState('dark');
   const pathname = usePathname();
 
   useEffect(() => {
@@ -18,6 +19,19 @@ export default function Navbar() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') || 'dark';
+    setTheme(savedTheme);
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(nextTheme);
+    localStorage.setItem('theme', nextTheme);
+    document.documentElement.setAttribute('data-theme', nextTheme);
+  };
 
   // Close mobile menu on route change
   useEffect(() => {
@@ -37,8 +51,9 @@ export default function Navbar() {
     <>
       <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
         <div className={`container-custom ${styles.inner}`}>
-          <Link href="/" className={styles.brand}>
-            DR STEEZE
+          <Link href="/" className={styles.brand} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <img src="/images/logo.jpg" alt="DR STEEZE" style={{ height: '36px', width: 'auto', borderRadius: '4px' }} />
+            <span>DR STEEZE</span>
           </Link>
 
           <div className={styles.navLinks}>
@@ -57,19 +72,32 @@ export default function Navbar() {
             })}
           </div>
 
-          <Link href="/contact" className={`ghost-button ${styles.ctaBtn}`}>
-            Work With Me
-          </Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <button
+              onClick={toggleTheme}
+              className={styles.themeBtn}
+              title={theme === 'dark' ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              aria-label="Toggle theme"
+            >
+              <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>
+                {theme === 'dark' ? 'light_mode' : 'dark_mode'}
+              </span>
+            </button>
 
-          <button
-            className={styles.mobileToggle}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className="material-symbols-outlined">
-              {mobileMenuOpen ? 'close' : 'menu'}
-            </span>
-          </button>
+            <Link href="/contact" className={`ghost-button ${styles.ctaBtn}`}>
+              Work With Me
+            </Link>
+
+            <button
+              className={styles.mobileToggle}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span className="material-symbols-outlined">
+                {mobileMenuOpen ? 'close' : 'menu'}
+              </span>
+            </button>
+          </div>
         </div>
       </nav>
 

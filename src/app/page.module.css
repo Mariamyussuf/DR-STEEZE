@@ -14,9 +14,29 @@
 .heroGradient {
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, rgba(13, 13, 13, 0.3) 0%, rgba(13, 13, 13, 0.6) 60%, var(--color-bg) 100%);
+  background: linear-gradient(to bottom, rgba(13, 13, 13, 0.2) 0%, rgba(13, 13, 13, 0.4) 60%, var(--color-bg) 100%);
   z-index: 1;
   pointer-events: none;
+}
+
+:global([data-theme="light"]) .heroGradient {
+  background: linear-gradient(to bottom, rgba(250, 249, 246, 0.2) 0%, rgba(250, 249, 246, 0.6) 60%, var(--color-bg) 100%);
+}
+
+.heroBgCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
+}
+
+:global([data-theme="light"]) .heroBgCanvas {
+  opacity: 0.12;
 }
 
 .heroContent {
@@ -34,14 +54,13 @@
 
 .heroTitle {
   font-family: var(--font-heading);
-  font-size: clamp(40px, 9.5vw, 120px);
+  font-size: clamp(32px, 6.5vw, 76px);
   font-weight: 700;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--color-text);
   margin-bottom: 8px;
-  text-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
-  line-height: 1.05;
+  line-height: 1.08;
 }
 
 .heroSubtitleWrapper {
@@ -54,12 +73,12 @@
 .heroDivider {
   width: 48px;
   height: 1px;
-  background-color: rgba(215, 195, 176, 0.4);
+  background-color: var(--color-border);
 }
 
 .heroSubtitle {
   font-family: var(--font-heading);
-  font-size: clamp(20px, 3.5vw, 36px);
+  font-size: clamp(16px, 2.2vw, 24px);
   font-style: italic;
   font-weight: 400;
   color: var(--color-tertiary);
@@ -68,11 +87,11 @@
 
 .heroSubheading {
   font-family: var(--font-body);
-  font-size: clamp(15px, 2vw, 20px);
+  font-size: clamp(14px, 1.5vw, 17px);
   font-weight: 300;
   color: var(--color-text-muted);
-  max-width: 600px;
-  margin-bottom: 40px;
+  max-width: 580px;
+  margin-bottom: 32px;
   line-height: 1.7;
 }
 
@@ -236,6 +255,12 @@
     grid-column: span 12;
   }
 
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 60px;
+    min-height: 85vh;
+  }
+
   .cozBanner {
     grid-template-columns: 1fr;
     padding: 32px 20px;
@@ -245,7 +270,7 @@
   }
 
   .cozImageWrapper {
-    height: 260px;
+    height: 240px;
   }
 
   .heroSubtitleWrapper {
@@ -258,5 +283,20 @@
 
   .scrollIndicator {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroContent {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .heroButtons {
+    gap: 12px;
+  }
+
+  .cozTitle {
+    font-size: 28px;
   }
 }

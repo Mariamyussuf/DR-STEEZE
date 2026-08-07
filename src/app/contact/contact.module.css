@@ -144,12 +144,30 @@
 }
 
 @media (max-width: 900px) {
+  .section {
+    padding-top: 130px;
+  }
+
   .leftCol, .rightCol {
     grid-column: span 12;
   }
 
   .rightCol {
-    padding: 32px 20px;
-    margin-top: 40px;
+    padding: 28px 16px;
+    margin-top: 32px;
+  }
+
+  .heading {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .socialItem {
+    font-size: 16px;
+  }
+
+  .input, .select, .textarea {
+    font-size: 16px !important;
   }
 }

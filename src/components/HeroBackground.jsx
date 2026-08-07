@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
-export default function HeroBackground() {
+export default function HeroBackground({ className }) {
   const containerRef = useRef(null);
 
   useEffect(() => {

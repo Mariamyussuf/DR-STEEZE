@@ -40,14 +40,14 @@ export default function CultureOfZionPage() {
             <ScrollReveal delay={1}>
               <div>
                 <span className="label-caps" style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '16px' }}>
-                  The Origin & Craft
+                  The Visual Ethos & Motion Craft
                 </span>
-                <h2 className={styles.storyHeading}>Forged in Tradition</h2>
+                <h2 className={styles.storyHeading}>Motion & Light</h2>
                 <p className={styles.storyParagraph}>
-                  Culture of Zion represents a return to true luxury. We reject mass production in favor of absolute meticulousness. Each pair is built by master cordwainers using techniques refined over centuries, ensuring a product that not only endures but improves with the passage of time.
+                  Every frame is crafted with intentional lighting, crisp motion tracking, and high-fashion sensibility. We bring fashion collections and commercial product campaigns to life through cinematic 4K videography and editorial photography.
                 </p>
                 <p className={styles.storyParagraph}>
-                  It is an ethos—a dedication to the art of the perfect stitch, the flawless cut, and the finest materials sourced globally. Presented as DR STEEZE’s signature venture in handcrafted leather footwear architecture.
+                  From high-contrast runway coverage to high-impact TV & digital ads, DR STEEZE Studio combines creative direction, precision camera movement, and bespoke color grading for global luxury and commercial clients.
                 </p>
               </div>
             </ScrollReveal>

@@ -5,28 +5,22 @@ import styles from './about.module.css';
 export default function AboutPage() {
   const journeyTimeline = [
     {
-      year: '2023 — PRES',
-      role: 'Founder & Executive Director',
-      company: 'Culture of Zion',
-      description: 'Established handcrafted luxury footwear label focusing on bespoke cordwainer craftsmanship and sculptural fashion silhouettes.'
-    },
-    {
-      year: '2019 — PRES',
-      role: 'Global Creative Director',
+      year: 'MONTH 5 - 6',
+      role: 'Fashion & Commercial Videographer & Director',
       company: 'DR STEEZE Studio',
-      description: 'Directing high-contrast editorial campaigns, commercial films, and visual strategy for international luxury brands in Tokyo, London, and New York.'
+      description: 'Directing high-contrast fashion short films, vendor commercial spots, and podcast video productions across Nigeria.'
     },
     {
-      year: '2016 — 2019',
-      role: 'Senior Fashion Photographer & Director',
-      company: 'Vanguard Visuals',
-      description: 'Led photography for high-fashion runway shows, cover features, and cinematic short film commissions.'
+      year: 'MONTH 3 - 4',
+      role: 'Fashion Photography & Event Motion',
+      company: 'Lagos & Regional Shoots',
+      description: 'Capturing school fashion contests, streetwear lookbooks, and high-contrast model portraiture.'
     },
     {
-      year: '2015',
-      role: 'Independent Visual Artist',
-      company: 'London / Tokyo',
-      description: 'Began exploring chiaroscuro lighting, architectural photography, and fine art film direction.'
+      year: 'MONTH 1 - 2',
+      role: 'Independent Visual Storyteller',
+      company: 'Brand Launch',
+      description: 'Launched DR STEEZE visual brand, focusing on high-contrast lighting, movement tracking, and 4K color grading.'
     }
   ];
 

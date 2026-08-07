@@ -128,9 +128,12 @@
 
 .modalImage {
   width: 100%;
-  height: 480px;
-  object-fit: cover;
-  margin-bottom: 32px;
+  max-height: 65vh;
+  height: auto;
+  object-fit: contain;
+  background-color: #000;
+  margin-bottom: 24px;
+  border-radius: 4px;
 }
 
 .modalMeta {
@@ -162,26 +165,74 @@
   }
 }
 
-@media (max-width: 640px) {
-  .masonryGrid {
-    column-count: 1;
+@media (max-width: 768px) {
+  .portfolioHeader {
+    padding-top: 130px;
+    padding-bottom: 32px;
   }
 
-  .portfolioHeader {
-    padding-top: 120px;
+  .title {
+    font-size: clamp(32px, 8vw, 56px);
+  }
+
+  .filtersSection {
+    padding-top: 24px;
+    padding-bottom: 24px;
+    gap: 8px;
+  }
+
+  .filterBtn {
+    font-size: 10px;
+    padding: 8px 16px;
+  }
+
+  .modalBackdrop {
+    padding: 10px;
   }
 
   .modalContent {
-    padding: 24px;
+    padding: 28px 18px;
+    max-height: 94vh;
+  }
+
+  .closeBtn {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
   }
 
   .modalImage {
-    height: 260px;
-    margin-bottom: 20px;
+    max-height: 55vh;
+    margin-bottom: 16px;
   }
 
   .modalMeta {
     grid-template-columns: 1fr;
     gap: 12px;
+    padding: 14px 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .masonryGrid {
+    column-count: 1;
+  }
+
+  .portfolioHeader {
+    padding-top: 110px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .modalContent {
+    padding: 20px 14px;
+  }
+
+  .modalImage {
+    max-height: 48vh;
   }
 }

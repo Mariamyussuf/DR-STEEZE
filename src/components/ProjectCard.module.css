@@ -106,3 +106,29 @@
   border-color: var(--color-gold);
   color: var(--color-gold);
 }
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 20px;
+  }
+
+  .imageWrapper {
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 17px;
+    margin-bottom: 2px;
+  }
+
+  .subCategory {
+    font-size: 12px;
+  }
+
+  .yearTag {
+    font-size: 10px;
+    padding: 3px 8px;
+  }
+}

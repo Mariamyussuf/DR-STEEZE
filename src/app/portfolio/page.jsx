@@ -6,7 +6,13 @@ import ProjectCard from '@/components/ProjectCard';
 import { projects } from '@/data/projects';
 import styles from './portfolio.module.css';
 
-const categories = ['All Work', 'Photography', 'Film', 'Commercial', 'Fashion', 'Events'];
+const categories = [
+  'All Work',
+  'Fashion Videography',
+  'Commercial Videography',
+  'Fashion Photography',
+  'Commercial Photography'
+];
 
 export default function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState('All Work');
@@ -26,9 +32,9 @@ export default function PortfolioPage() {
             <span className="label-caps" style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '12px' }}>
               Archive & Selected Works
             </span>
-            <h1 className={styles.title}>Selected Works</h1>
+            <h1 className={styles.title}>Motion & Imagery</h1>
             <p className={styles.subtitle}>
-              Capturing the unseen narrative. A curation of visual explorations across photography, film, commercial direction, and high-fashion editorial contexts.
+              Capturing movement, form, and light. A curation of high-contrast fashion editorials, commercial campaign videos, lookbooks, and brand films directed by Sobayo Deborah Oluwaseyitan (DR STEEZE).
             </p>
           </ScrollReveal>
         </div>
@@ -78,11 +84,22 @@ export default function PortfolioPage() {
               <span className="material-symbols-outlined">close</span>
             </button>
 
-            <img
-              src={selectedProject.image}
-              alt={selectedProject.alt || selectedProject.title}
-              className={styles.modalImage}
-            />
+            {selectedProject.video ? (
+              <video
+                src={selectedProject.video}
+                poster={selectedProject.image}
+                controls
+                autoPlay
+                playsInline
+                className={styles.modalImage}
+              />
+            ) : (
+              <img
+                src={selectedProject.image}
+                alt={selectedProject.alt || selectedProject.title}
+                className={styles.modalImage}
+              />
+            )}
 
             <span className="label-caps" style={{ color: 'var(--color-gold)' }}>
               {selectedProject.category} — {selectedProject.year}

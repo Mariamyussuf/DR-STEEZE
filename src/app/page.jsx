@@ -14,7 +14,7 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className={styles.hero}>
-        <HeroBackground />
+        <HeroBackground className={styles.heroBgCanvas} />
         <div className={styles.heroGradient} />
 
         <div className={styles.heroContent}>
@@ -25,14 +25,14 @@ export default function Home() {
           <ScrollReveal delay={2} animation="fade-up">
             <div className={styles.heroSubtitleWrapper}>
               <div className={styles.heroDivider} />
-              <h2 className={styles.heroSubtitle}>Creative Director</h2>
+              <h2 className={styles.heroSubtitle}>Fashion & Commercial Videography & Photography</h2>
               <div className={styles.heroDivider} />
             </div>
           </ScrollReveal>
 
           <ScrollReveal delay={3} animation="fade-up">
             <p className={styles.heroSubheading}>
-              Creating timeless stories through photography, filmmaking, and handcrafted design.
+              Creating high-impact fashion editorial films, runway motion, commercial advertising spots, and striking photography.
             </p>
           </ScrollReveal>
 
@@ -63,7 +63,7 @@ export default function Home() {
                 Curated Works
               </span>
               <KineticText as="h3" className="headline-xl">
-                Featured Work
+                Featured Works
               </KineticText>
             </div>
             <Link href="/portfolio" className="ghost-button" style={{ fontSize: '11px', padding: '12px 28px' }}>
@@ -105,7 +105,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Culture of Zion Banner Feature */}
+          {/* Director Showcase Banner Feature */}
           <ScrollReveal animation="scale-up">
             <div className={styles.cozBanner}>
               <div className={styles.cozImageWrapper}>
@@ -116,13 +116,13 @@ export default function Home() {
                 />
               </div>
               <div className={styles.cozContent}>
-                <span className={styles.cozBadge}>Signature Venture</span>
+                <span className={styles.cozBadge}>Director Reel</span>
                 <KineticText as="h3" className={styles.cozTitle}>
                   {cultureOfZionData.title}
                 </KineticText>
                 <p className={styles.cozText}>{cultureOfZionData.description}</p>
                 <Link href="/culture-of-zion" className="primary-button">
-                  Explore The Collection
+                  Watch Motion Reel
                 </Link>
               </div>
             </div>
