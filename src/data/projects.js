@@ -187,12 +187,17 @@ export const cultureOfZionData = {
 };
 
 export const aboutData = {
-  name: "DR STEEZE",
+  name: "Sobayo Deborah Oluwaseyitan",
+  brand: "DR STEEZE",
   role: "Creative Director",
   headline: "The Visionary Eye",
-  philosophy: "I am DR STEEZE, a Creative Director and visual storyteller dedicated to crafting high-fidelity narratives. My philosophy marries raw authenticity with editorial precision, creating a visual language that speaks volumes in its restraint. In a world saturated with noise, I seek the quiet power of intentional composition and masterful lighting.",
+  philosophy: "I am Sobayo Deborah Oluwaseyitan (DR STEEZE), a Creative Director and visual storyteller based in Nigeria, dedicated to crafting high-fidelity narratives. My philosophy marries raw authenticity with editorial precision, creating a visual language that speaks volumes in its restraint.",
   established: "EST. 2015",
-  locations: "LONDON / TOKYO / NEW YORK",
+  locations: "NIGERIA / GLOBAL",
+  email: "deborahsobayo@gmail.com",
+  phone: "+234 708 031 0627",
+  instagram: "@_dr_steeze",
+  tiktok: "@ayan_tofunmi",
   portrait: "https://lh3.googleusercontent.com/aida-public/AB6AXuBbkc_kBKf5jN-YoRAnEJdFN55yZxjyRZHlV6fkW2TZDSZ-1bOIJPT2r4NCWPgCq3GMOwYg7wOvmffWws9BgQoS002Z3zM_tX_QrbIf7vS8-lP1wpGFSScr6Xtdy68PaMl1AzobhjULLiOsFT4SEkW3geEF8X9QRlmwxrTosc61Jq5kUZ_ltefWSUkhSoqSN2-zsd6Xu19fd2jUQYT4TY5-ZXxSmOOYMH3rh3jLdV-aWigsRJbNjTtK2A",
   stats: [
     { value: "10+", label: "Years Directing" },

@@ -82,7 +82,15 @@
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
+  margin-bottom: 40px;
 }
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
 
 .scrollIndicator {
   position: absolute;

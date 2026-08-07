@@ -19,42 +19,34 @@ export default function Footer() {
             <div className={styles.socialGroup}>
               <span className={styles.groupTitle}>Connect</span>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/_dr_steeze"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
               >
-                Instagram
+                Instagram (@_dr_steeze)
               </a>
               <a
-                href="https://tiktok.com"
+                href="https://tiktok.com/@ayan_tofunmi"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
               >
-                TikTok
+                TikTok (@ayan_tofunmi)
               </a>
               <a
-                href="https://whatsapp.com"
+                href="https://wa.me/2347080310627"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialLink}
               >
-                WhatsApp
+                WhatsApp (+234 708 031 0627)
               </a>
               <a
-                href="mailto:hello@drsteeze.com"
+                href="mailto:deborahsobayo@gmail.com"
                 className={styles.socialLink}
               >
                 Email
-              </a>
-              <a
-                href="https://vimeo.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialLink}
-              >
-                Vimeo
               </a>
             </div>
 
@@ -81,7 +73,7 @@ export default function Footer() {
 
         <div className={styles.bottomRow}>
           <div>
-            © {new Date().getFullYear()} DR STEEZE. ALL RIGHTS RESERVED.
+            © {new Date().getFullYear()} SOBAYO DEBORAH OLUWASEYITAN (DR STEEZE). ALL RIGHTS RESERVED. NIGERIA.
           </div>
           <div>
             FOUNDER OF{' '}
