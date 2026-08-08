@@ -14,6 +14,14 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className={styles.hero}>
+        <video
+          src="/videos/IMG_0046.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={styles.heroBackgroundVideo}
+        />
         <HeroBackground className={styles.heroBgCanvas} />
         <div className={styles.heroGradient} />
 
@@ -109,9 +117,12 @@ export default function Home() {
           <ScrollReveal animation="scale-up">
             <div className={styles.cozBanner}>
               <div className={styles.cozImageWrapper}>
-                <img
-                  src={cultureOfZionData.heroImage}
-                  alt={cultureOfZionData.title}
+                <video
+                  src="/videos/IMG_0069.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
                   className={styles.cozImage}
                 />
               </div>
