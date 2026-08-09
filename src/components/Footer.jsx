@@ -52,19 +52,19 @@ export default function Footer() {
 
             <div className={styles.socialGroup}>
               <span className={styles.groupTitle}>Navigation</span>
-              <Link href="/portfolio" className={styles.socialLink}>
+              <Link href="/portfolio" prefetch={false} className={styles.socialLink}>
                 Portfolio
               </Link>
-              <Link href="/services" className={styles.socialLink}>
+              <Link href="/services" prefetch={false} className={styles.socialLink}>
                 Services
               </Link>
-              <Link href="/culture-of-zion" className={styles.socialLink}>
+              <Link href="/culture-of-zion" prefetch={false} className={styles.socialLink}>
                 Culture of Zion
               </Link>
-              <Link href="/about" className={styles.socialLink}>
+              <Link href="/about" prefetch={false} className={styles.socialLink}>
                 About
               </Link>
-              <Link href="/contact" className={styles.socialLink}>
+              <Link href="/contact" prefetch={false} className={styles.socialLink}>
                 Contact
               </Link>
             </div>
@@ -77,7 +77,7 @@ export default function Footer() {
           </div>
           <div>
             FOUNDER OF{' '}
-            <Link href="/culture-of-zion" className={styles.cultureBadge}>
+            <Link href="/culture-of-zion" prefetch={false} className={styles.cultureBadge}>
               CULTURE OF ZION
             </Link>
           </div>

@@ -39,10 +39,10 @@ export default function Home() {
 
           <ScrollReveal delay={4} animation="scale-up">
             <div className={styles.heroButtons}>
-              <Link href="/portfolio" className="primary-button">
+              <Link href="/portfolio" prefetch={false} className="primary-button">
                 View Portfolio
               </Link>
-              <Link href="/contact" className="ghost-button">
+              <Link href="/contact" prefetch={false} className="ghost-button">
                 Work With Me
               </Link>
             </div>
@@ -67,7 +67,7 @@ export default function Home() {
                 Featured Works
               </KineticText>
             </div>
-            <Link href="/portfolio" className={`ghost-button ${styles.headerButton}`}>
+            <Link href="/portfolio" prefetch={false} className={`ghost-button ${styles.headerButton}`}>
               View Full Archive
             </Link>
           </div>
@@ -75,7 +75,7 @@ export default function Home() {
           <div className={styles.featuredGrid}>
             <div className={styles.col8}>
               <ScrollReveal animation="scale-up">
-                <Link href="/portfolio" className={styles.cardLink}>
+                <Link href="/portfolio" prefetch={false} className={styles.cardLink}>
                   <ProjectCard project={featuredProjects[0]} aspect="wide" />
                 </Link>
               </ScrollReveal>
@@ -83,7 +83,7 @@ export default function Home() {
 
             <div className={styles.col4}>
               <ScrollReveal delay={1} animation="scale-up">
-                <Link href="/portfolio" className={styles.cardLink}>
+                <Link href="/portfolio" prefetch={false} className={styles.cardLink}>
                   <ProjectCard project={featuredProjects[1]} aspect="tall" />
                 </Link>
               </ScrollReveal>
@@ -91,7 +91,7 @@ export default function Home() {
 
             <div className={styles.col5}>
               <ScrollReveal animation="scale-up">
-                <Link href="/portfolio" className={styles.cardLink}>
+                <Link href="/portfolio" prefetch={false} className={styles.cardLink}>
                   <ProjectCard project={featuredProjects[2]} aspect="square" />
                 </Link>
               </ScrollReveal>
@@ -99,7 +99,7 @@ export default function Home() {
 
             <div className={styles.col7}>
               <ScrollReveal delay={2} animation="scale-up">
-                <Link href="/portfolio" className={styles.cardLink}>
+                <Link href="/portfolio" prefetch={false} className={styles.cardLink}>
                   <ProjectCard project={featuredProjects[3]} aspect="wide" />
                 </Link>
               </ScrollReveal>
@@ -123,7 +123,7 @@ export default function Home() {
                   {cultureOfZionData.title}
                 </KineticText>
                 <p className={styles.cozText}>{cultureOfZionData.description}</p>
-                <Link href="/culture-of-zion" className="primary-button">
+                <Link href="/culture-of-zion" prefetch={false} className="primary-button">
                   Watch Motion Reel
                 </Link>
               </div>
@@ -140,7 +140,7 @@ export default function Home() {
                 Services
               </KineticText>
             </div>
-            <Link href="/services" className={`ghost-button ${styles.headerButton}`}>
+            <Link href="/services" prefetch={false} className={`ghost-button ${styles.headerButton}`}>
               All Capabilities
             </Link>
           </div>

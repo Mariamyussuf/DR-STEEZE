@@ -32,11 +32,28 @@ export default function VideoPlayer({
 }) {
   const [quality, setQuality] = useState(defaultQuality);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMuted, setIsMuted] = useState(muted);
   const videoRef = useRef(null);
   const menuRef = useRef(null);
   const isFirstRender = useRef(true);
 
   const videoSrc = `/videos/${quality}/${videoId}.mp4`;
+
+  // Toggle sound state
+  const toggleSound = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+
+    const nextMuted = !isMuted;
+    video.muted = nextMuted;
+    setIsMuted(nextMuted);
+
+    if (!nextMuted) {
+      video.play().catch(() => {});
+    }
+  };
 
   // When quality changes, seamlessly switch src and preserve playback time & state
   useEffect(() => {
@@ -59,6 +76,7 @@ export default function VideoPlayer({
           // ignore seek bounds error
         }
       }
+      video.muted = isMuted;
       if (isPlaying || autoPlay) {
         video.play().catch(() => {});
       }
@@ -67,7 +85,7 @@ export default function VideoPlayer({
     video.addEventListener('loadedmetadata', handleMetadata, { once: true });
     video.src = videoSrc;
     video.load();
-  }, [quality, videoSrc, autoPlay]);
+  }, [quality, videoSrc, autoPlay, isMuted]);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -88,7 +106,7 @@ export default function VideoPlayer({
         poster={poster}
         autoPlay={autoPlay}
         loop={loop}
-        muted={muted}
+        muted={isMuted}
         controls={controls}
         playsInline
         preload="auto"
@@ -97,6 +115,18 @@ export default function VideoPlayer({
 
       {showControls && (
         <div className={styles.controls} ref={menuRef} onClick={(e) => e.stopPropagation()}>
+          <button
+            className={styles.soundButton}
+            onClick={toggleSound}
+            aria-label={isMuted ? 'Unmute video audio' : 'Mute video audio'}
+            title={isMuted ? 'Unmute video audio' : 'Mute video audio'}
+          >
+            <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>
+              {isMuted ? 'volume_off' : 'volume_up'}
+            </span>
+            <span className={styles.soundLabel}>{isMuted ? 'Muted' : 'Sound On'}</span>
+          </button>
+
           <button
             className={styles.qualityButton}
             onClick={(e) => {

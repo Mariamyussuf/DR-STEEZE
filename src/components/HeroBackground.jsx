@@ -111,12 +111,18 @@ export default function HeroBackground({ className }) {
 
     window.addEventListener('mousemove', handleMouseMove);
 
+    let resizeAnimationFrame;
     const handleResize = () => {
-      renderer.setSize(window.innerWidth, window.innerHeight);
-      uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight);
+      if (resizeAnimationFrame) cancelAnimationFrame(resizeAnimationFrame);
+      resizeAnimationFrame = requestAnimationFrame(() => {
+        const w = window.innerWidth;
+        const h = window.innerHeight;
+        renderer.setSize(w, h);
+        uniforms.u_resolution.value.set(w, h);
+      });
     };
 
-    window.addEventListener('resize', handleResize);
+    window.addEventListener('resize', handleResize, { passive: true });
 
     const animate = () => {
       animationFrameId = requestAnimationFrame(animate);
@@ -134,6 +140,7 @@ export default function HeroBackground({ className }) {
 
     return () => {
       cancelAnimationFrame(animationFrameId);
+      if (resizeAnimationFrame) cancelAnimationFrame(resizeAnimationFrame);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
       if (container && renderer.domElement) {

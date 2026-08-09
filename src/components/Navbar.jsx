@@ -73,6 +73,7 @@ export default function Navbar() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  prefetch={false}
                   className={`${styles.link} ${isActive ? styles.active : ''}`}
                 >
                   <span className={styles.linkText}>{item.label}</span>
@@ -83,7 +84,7 @@ export default function Navbar() {
           </div>
 
           <div className={styles.rightActions}>
-            <Link href="/contact" className={`ghost-button ${styles.ctaBtn}`}>
+            <Link href="/contact" prefetch={false} className={`ghost-button ${styles.ctaBtn}`}>
               Work With Me
             </Link>
 
@@ -106,6 +107,7 @@ export default function Navbar() {
           <Link
             key={item.href}
             href={item.href}
+            prefetch={false}
             className={styles.mobileLink}
             onClick={() => setMobileMenuOpen(false)}
           >
@@ -114,6 +116,7 @@ export default function Navbar() {
         ))}
         <Link
           href="/contact"
+          prefetch={false}
           className={`primary-button ${styles.mobileCta}`}
           onClick={() => setMobileMenuOpen(false)}
         >
