@@ -15,13 +15,6 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className={styles.hero}>
-        <VideoPlayer
-          videoId="IMG_0046"
-          poster="/images/poster_IMG_0046.jpg"
-          className={styles.heroBackgroundVideo}
-          showControls={true}
-          defaultQuality="720p"
-        />
         <HeroBackground className={styles.heroBgCanvas} />
         <div className={styles.heroGradient} />
 
