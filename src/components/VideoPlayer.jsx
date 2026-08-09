@@ -25,6 +25,7 @@ export default function VideoPlayer({
   autoPlay = true,
   loop = true,
   muted = true,
+  controls = false,
   showControls = true,
   defaultQuality = '480p',
   ...rest
@@ -33,26 +34,40 @@ export default function VideoPlayer({
   const [menuOpen, setMenuOpen] = useState(false);
   const videoRef = useRef(null);
   const menuRef = useRef(null);
+  const isFirstRender = useRef(true);
 
   const videoSrc = `/videos/${quality}/${videoId}.mp4`;
 
-  // When quality changes, reload the video and maintain playback state
+  // When quality changes, seamlessly switch src and preserve playback time & state
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      return;
+    }
+
     const video = videoRef.current;
     if (!video) return;
 
-    const currentTime = video.currentTime;
-    const wasPlaying = !video.paused;
+    const savedTime = video.currentTime || 0;
+    const isPlaying = !video.paused;
 
-    video.load();
-
-    const onLoaded = () => {
-      video.currentTime = currentTime;
-      if (wasPlaying) video.play().catch(() => {});
-      video.removeEventListener('loadeddata', onLoaded);
+    const handleMetadata = () => {
+      if (savedTime > 0 && Number.isFinite(savedTime) && savedTime < video.duration) {
+        try {
+          video.currentTime = savedTime;
+        } catch (e) {
+          // ignore seek bounds error
+        }
+      }
+      if (isPlaying || autoPlay) {
+        video.play().catch(() => {});
+      }
     };
-    video.addEventListener('loadeddata', onLoaded);
-  }, [quality]);
+
+    video.addEventListener('loadedmetadata', handleMetadata, { once: true });
+    video.src = videoSrc;
+    video.load();
+  }, [quality, videoSrc, autoPlay]);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -69,16 +84,16 @@ export default function VideoPlayer({
     <div className={`${styles.wrapper} ${className}`} {...rest}>
       <video
         ref={videoRef}
+        src={videoSrc}
         poster={poster}
         autoPlay={autoPlay}
         loop={loop}
         muted={muted}
+        controls={controls}
         playsInline
         preload="auto"
         className={styles.video}
-      >
-        <source src={videoSrc} type="video/mp4" />
-      </video>
+      />
 
       {showControls && (
         <div className={styles.controls} ref={menuRef} onClick={(e) => e.stopPropagation()}>
@@ -128,3 +143,4 @@ export default function VideoPlayer({
     </div>
   );
 }
+

@@ -92,6 +92,7 @@ export default function PortfolioPage() {
                 className={styles.modalImage}
                 defaultQuality="720p"
                 showControls={true}
+                controls={true}
               />
             ) : (
               <img
