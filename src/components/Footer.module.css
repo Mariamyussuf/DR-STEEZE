@@ -69,16 +69,24 @@
   color: var(--color-text);
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
 }
 
-.socialLink:hover {
-  color: var(--color-gold);
-  transform: translateX(6px);
+@media (hover: hover) {
+  .socialLink:hover {
+    color: var(--color-gold);
+    transform: translateX(6px);
+  }
+
+  .cultureBadge:hover {
+    color: var(--color-gold);
+  }
 }
 
 .bottomRow {
-  margin-top: 100px;
+  margin-top: 80px;
   padding-top: 32px;
   border-top: 1px solid rgba(229, 226, 225, 0.05);
   display: flex;
@@ -97,10 +105,6 @@
   transition: color 0.3s ease;
 }
 
-.cultureBadge:hover {
-  color: var(--color-gold);
-}
-
 @media (max-width: 900px) {
   .mainCol,
   .linksCol {
@@ -108,12 +112,38 @@
   }
 
   .linksCol {
-    margin-top: 48px;
+    margin-top: 40px;
   }
 
   .bottomRow {
+    margin-top: 60px;
     flex-direction: column;
     gap: 16px;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer {
+    padding-bottom: 48px;
+  }
+
+  .brand {
+    font-size: clamp(32px, 12vw, 56px);
+    margin-bottom: 16px;
+  }
+
+  .subtext {
+    font-size: 15px;
+  }
+
+  .linksCol {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .bottomRow {
+    margin-top: 40px;
+    font-size: 10px;
   }
 }

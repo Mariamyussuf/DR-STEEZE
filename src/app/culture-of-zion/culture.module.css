@@ -83,9 +83,13 @@
 }
 
 .storyImageWrapper {
-  height: 640px;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+  max-height: 640px;
   position: relative;
   overflow: hidden;
+  border-radius: 4px;
 }
 
 .storyImage {
@@ -136,6 +140,7 @@
   overflow-x: auto;
   padding-bottom: 40px;
   scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
@@ -155,6 +160,7 @@
   overflow: hidden;
   scroll-snap-align: center;
   background-color: var(--color-surface-low);
+  border-radius: 4px;
 }
 
 .galleryCardImage {
@@ -175,7 +181,7 @@
   left: 0;
   right: 0;
   padding: 48px;
-  background: linear-gradient(to top, var(--color-bg) 0%, transparent 100%);
+  background: linear-gradient(to top, rgba(13, 13, 13, 0.95) 0%, rgba(13, 13, 13, 0.4) 70%, transparent 100%);
 }
 
 .galleryCardTitle {
@@ -194,23 +200,69 @@
 }
 
 @media (max-width: 900px) {
+  .hero {
+    padding-top: 110px;
+    padding-bottom: 60px;
+    min-height: 75vh;
+    min-height: 75dvh;
+  }
+
   .splitGrid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 40px;
   }
 
   .storyImageWrapper {
-    height: 400px;
+    aspect-ratio: 16 / 10;
+    max-height: 380px;
+  }
+
+  .storyParagraph {
+    font-size: 16px;
+  }
+
+  .galleryHeading {
+    margin-bottom: 48px;
+  }
+
+  .galleryCard {
+    flex: 0 0 82vw;
+    height: clamp(300px, 50vh, 480px);
+    min-height: 280px;
+  }
+
+  .galleryCardOverlay {
+    padding: 28px;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .storyHeading {
+    font-size: 28px;
+    margin-bottom: 16px;
   }
 
   .galleryCard {
     flex: 0 0 88vw;
-    height: 50vh;
-    height: 50dvh;
-    min-height: 320px;
   }
 
   .galleryCardOverlay {
-    padding: 24px;
+    padding: 18px;
+  }
+
+  .galleryCardTitle {
+    font-size: 22px;
+  }
+
+  .galleryCardDesc {
+    font-size: 13px;
   }
 }

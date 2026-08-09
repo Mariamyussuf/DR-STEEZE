@@ -38,11 +38,6 @@
   filter: grayscale(15%) brightness(95%);
 }
 
-.card:hover .image {
-  transform: scale(1.05);
-  filter: grayscale(0%) brightness(105%);
-}
-
 .videoFill {
   width: 100%;
   height: 100%;
@@ -53,9 +48,33 @@
   filter: grayscale(15%) brightness(95%);
 }
 
-.card:hover .videoFill video {
-  transform: scale(1.05);
-  filter: grayscale(0%) brightness(105%);
+@media (hover: hover) {
+  .card:hover .image {
+    transform: scale(1.05);
+    filter: grayscale(0%) brightness(105%);
+  }
+
+  .card:hover .videoFill video {
+    transform: scale(1.05);
+    filter: grayscale(0%) brightness(105%);
+  }
+
+  .card:hover .goldLine {
+    width: 100%;
+  }
+
+  .card:hover .metaRow {
+    border-left-color: var(--color-gold);
+  }
+
+  .card:hover .title {
+    color: var(--color-gold);
+  }
+
+  .card:hover .yearTag {
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+  }
 }
 
 .motionBadge {
@@ -92,10 +111,6 @@
   transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.card:hover .goldLine {
-  width: 100%;
-}
-
 .metaRow {
   display: flex;
   justify-content: space-between;
@@ -105,10 +120,6 @@
   transition: border-color 0.4s ease;
 }
 
-.card:hover .metaRow {
-  border-left-color: var(--color-gold);
-}
-
 .title {
   font-family: var(--font-heading);
   font-size: 26px;
@@ -116,10 +127,6 @@
   color: var(--color-text);
   transition: color 0.4s ease;
   margin-bottom: 4px;
-}
-
-.card:hover .title {
-  color: var(--color-gold);
 }
 
 .subCategory {
@@ -139,11 +146,6 @@
   padding: 4px 10px;
   border: 1px solid var(--color-border);
   transition: all 0.3s ease;
-}
-
-.card:hover .yearTag {
-  border-color: var(--color-gold);
-  color: var(--color-gold);
 }
 
 @media (max-width: 768px) {

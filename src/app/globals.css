@@ -27,6 +27,8 @@
   --spacing-mobile-margin: 20px;
   --spacing-gutter: 32px;
   --spacing-section-gap: 140px;
+  --safe-area-left: env(safe-area-inset-left, 0px);
+  --safe-area-right: env(safe-area-inset-right, 0px);
 }
 
 *, *::before, *::after {
@@ -176,6 +178,7 @@ img, video {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 0;
   white-space: nowrap;
+  touch-action: manipulation;
 }
 
 .primary-button:hover {
@@ -205,6 +208,7 @@ img, video {
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   border-radius: 0;
   white-space: nowrap;
+  touch-action: manipulation;
 }
 
 .ghost-button:hover {
@@ -231,14 +235,21 @@ img, video {
   max-width: 1600px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--spacing-desktop-margin);
-  padding-right: var(--spacing-desktop-margin);
+  padding-left: max(var(--spacing-desktop-margin), var(--safe-area-left));
+  padding-right: max(var(--spacing-desktop-margin), var(--safe-area-right));
+}
+
+@media (max-width: 1024px) {
+  .container-custom {
+    padding-left: max(40px, var(--safe-area-left));
+    padding-right: max(40px, var(--safe-area-right));
+  }
 }
 
 @media (max-width: 900px) {
   .container-custom {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: max(32px, var(--safe-area-left));
+    padding-right: max(32px, var(--safe-area-right));
   }
 }
 
@@ -248,8 +259,8 @@ img, video {
   }
 
   .container-custom {
-    padding-left: var(--spacing-mobile-margin);
-    padding-right: var(--spacing-mobile-margin);
+    padding-left: max(var(--spacing-mobile-margin), var(--safe-area-left));
+    padding-right: max(var(--spacing-mobile-margin), var(--safe-area-right));
   }
 
   .primary-button, .ghost-button {

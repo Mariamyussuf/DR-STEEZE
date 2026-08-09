@@ -160,19 +160,89 @@
   line-height: 1.7;
 }
 
+@media (max-width: 1024px) {
+  .hero {
+    min-height: auto;
+    padding-top: 130px;
+    padding-bottom: 60px;
+  }
+
+  .portraitWrapper {
+    width: 60%;
+  }
+
+  .title {
+    font-size: clamp(40px, 7vw, 72px);
+  }
+}
+
 @media (max-width: 900px) {
   .portraitWrapper {
     width: 100%;
-    opacity: 0.3;
+    opacity: 0.25;
+  }
+
+  .gradientOverlay {
+    background: linear-gradient(to bottom, var(--color-bg) 0%, rgba(13, 13, 13, 0.85) 60%, var(--color-bg) 100%);
+  }
+
+  .heroContent {
+    max-width: 100%;
+  }
+
+  .philosophy {
+    font-size: 17px;
+    margin-bottom: 28px;
   }
 
   .statsGrid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 32px;
   }
 
   .timelineItem {
     grid-template-columns: 1fr;
     gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding-top: 110px;
+    padding-bottom: 48px;
+  }
+
+  .title {
+    font-size: 32px;
+    margin-bottom: 16px;
+  }
+
+  .philosophy {
+    font-size: 15px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 16px;
+  }
+
+  .statValue {
+    font-size: 36px;
+  }
+
+  .statLabel {
+    font-size: 10px;
+  }
+
+  .timelineYear {
+    font-size: 18px;
+  }
+
+  .timelineRole {
+    font-size: 18px;
+  }
+
+  .timelineDesc {
+    font-size: 14px;
   }
 }

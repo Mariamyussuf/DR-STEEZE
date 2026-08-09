@@ -48,25 +48,28 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 16px;
+  min-height: 48px;
   border-bottom: 1px solid rgba(229, 226, 225, 0.1);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.socialItem:hover {
-  color: var(--color-gold);
-  padding-left: 16px;
-  border-bottom-color: var(--color-gold);
+@media (hover: hover) {
+  .socialItem:hover {
+    color: var(--color-gold);
+    padding-left: 16px;
+    border-bottom-color: var(--color-gold);
+  }
+
+  .socialItem:hover .arrowIcon {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 .arrowIcon {
   opacity: 0;
   transform: translateX(-10px);
   transition: all 0.4s ease;
-}
-
-.socialItem:hover .arrowIcon {
-  opacity: 1;
-  transform: translateX(0);
 }
 
 .rightCol {
@@ -108,6 +111,7 @@
   font-weight: 300;
   color: var(--color-text);
   padding-bottom: 12px;
+  min-height: 48px;
   border-radius: 0;
   outline: none;
   transition: border-color 0.3s ease;
@@ -126,6 +130,7 @@
 
 .textarea {
   resize: none;
+  min-height: 120px;
 }
 
 .submitBtn {
@@ -143,7 +148,7 @@
   text-align: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 960px) {
   .section {
     padding-top: 130px;
   }
@@ -153,7 +158,7 @@
   }
 
   .rightCol {
-    padding: 28px 16px;
+    padding: 36px 20px;
     margin-top: 32px;
   }
 
@@ -163,8 +168,17 @@
 }
 
 @media (max-width: 480px) {
+  .section {
+    padding-top: 110px;
+  }
+
+  .rightCol {
+    padding: 24px 16px;
+  }
+
   .socialItem {
-    font-size: 16px;
+    font-size: 18px;
+    padding-bottom: 12px;
   }
 
   .input, .select, .textarea {

@@ -81,6 +81,12 @@
   flex-shrink: 0;
 }
 
+@media (max-width: 1240px) {
+  .navLinks {
+    gap: 18px;
+  }
+}
+
 .link {
   position: relative;
   font-family: var(--font-body);
@@ -161,9 +167,10 @@
   padding: 8px;
   min-width: 44px;
   min-height: 44px;
-  display: flex;
   align-items: center;
   justify-content: center;
+  touch-action: manipulation;
+  z-index: 101;
 }
 
 /* Mobile Menu Overlay */
@@ -178,7 +185,15 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 16px;
+  padding-top: max(60px, env(safe-area-inset-top, 20px));
+  padding-bottom: max(40px, env(safe-area-inset-bottom, 20px));
+  padding-left: max(20px, env(safe-area-inset-left, 20px));
+  padding-right: max(20px, env(safe-area-inset-right, 20px));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100vh;
+  max-height: 100dvh;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
@@ -191,21 +206,24 @@
 
 .mobileLink {
   font-family: var(--font-heading);
-  font-size: 32px;
+  font-size: clamp(24px, 5vw, 36px);
   font-weight: 500;
   color: var(--color-text);
   text-decoration: none;
   letter-spacing: 0.05em;
   transition: color 0.3s ease;
-  padding: 8px 16px;
-  display: inline-block;
+  padding: 10px 20px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mobileLink:hover {
   color: var(--color-gold);
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1080px) {
   .navLinks,
   .ctaBtn {
     display: none;
@@ -223,11 +241,11 @@
   }
 
   .mobileLink {
-    font-size: 24px;
-    padding: 6px 12px;
+    font-size: 22px;
+    padding: 8px 16px;
   }
 
   .brand span {
-    font-size: 17px;
+    font-size: 16px;
   }
 }
