@@ -43,18 +43,27 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+  white-space: nowrap;
 }
 
 .logoImg {
-  height: 36px;
+  height: 38px;
   width: auto;
+  max-height: 38px;
+  max-width: 48px;
+  object-fit: contain;
   border-radius: 4px;
+  filter: invert(1);
+  mix-blend-mode: screen;
+  flex-shrink: 0;
 }
 
 .rightActions {
   display: flex;
   align-items: center;
   gap: 16px;
+  flex-shrink: 0;
 }
 
 .mobileCta {
@@ -68,7 +77,8 @@
 .navLinks {
   display: flex;
   align-items: center;
-  gap: 36px;
+  gap: 28px;
+  flex-shrink: 0;
 }
 
 .link {
@@ -83,11 +93,13 @@
   overflow: hidden;
   height: 20px;
   display: inline-block;
+  white-space: nowrap;
   transition: color 0.3s ease;
 }
 
 .linkText {
   display: block;
+  white-space: nowrap;
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -96,6 +108,7 @@
   position: absolute;
   top: 100%;
   left: 0;
+  white-space: nowrap;
   color: var(--color-gold);
   transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -192,7 +205,7 @@
   color: var(--color-gold);
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .navLinks,
   .ctaBtn {
     display: none;

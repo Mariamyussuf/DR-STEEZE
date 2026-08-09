@@ -64,8 +64,7 @@ input, select, textarea {
 }
 
 /* Global responsive media safety rule */
-img:not([class*="heroBackgroundVideo"]):not([class*="portrait"]):not([class*="cozImage"]):not([class*="heroBgCanvas"]),
-video:not([class*="heroBackgroundVideo"]):not([class*="video"]) {
+img, video {
   max-width: 100%;
   height: auto;
 }
