@@ -4,6 +4,7 @@ import ScrollReveal from '@/components/ScrollReveal';
 import KineticText from '@/components/KineticText';
 import ProjectCard from '@/components/ProjectCard';
 import ServiceCard from '@/components/ServiceCard';
+import VideoPlayer from '@/components/VideoPlayer';
 import { projects, servicesList, cultureOfZionData } from '@/data/projects';
 import styles from './page.module.css';
 
@@ -14,13 +15,12 @@ export default function Home() {
     <>
       {/* Hero Section */}
       <section className={styles.hero}>
-        <video
-          src="/videos/IMG_0046.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
+        <VideoPlayer
+          videoId="IMG_0046"
+          poster="/images/poster_IMG_0046.jpg"
           className={styles.heroBackgroundVideo}
+          showControls={false}
+          defaultQuality="720p"
         />
         <HeroBackground className={styles.heroBgCanvas} />
         <div className={styles.heroGradient} />
@@ -117,13 +117,11 @@ export default function Home() {
           <ScrollReveal animation="scale-up">
             <div className={styles.cozBanner}>
               <div className={styles.cozImageWrapper}>
-                <video
-                  src="/videos/IMG_0069.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
+                <VideoPlayer
+                  videoId="IMG_0069"
+                  poster="/images/poster_IMG_0069.jpg"
                   className={styles.cozImage}
+                  defaultQuality="480p"
                 />
               </div>
               <div className={styles.cozContent}>

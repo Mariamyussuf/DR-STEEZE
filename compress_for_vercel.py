@@ -1,77 +1,72 @@
 """
-Aggressively compress MOV videos for Vercel deployment.
-Target: < 4.5 MB per file, total < 50 MB for all videos.
-Strategy: 480p, CRF 32, 30-second max, strip audio, faststart.
+Compress MOV videos at multiple quality tiers for Vercel deployment.
+Outputs: public/videos/480p/, public/videos/720p/, public/videos/1080p/
 """
 import os
 import subprocess
 import sys
 
-# Use imageio_ffmpeg's bundled ffmpeg
 import imageio_ffmpeg
 ffmpeg = imageio_ffmpeg.get_ffmpeg_exe()
 
 vdir = os.path.join(os.getcwd(), 'public', 'videos')
-out_dir = os.path.join(os.getcwd(), 'public', 'videos_compressed')
-os.makedirs(out_dir, exist_ok=True)
-
 mov_files = sorted([f for f in os.listdir(vdir) if f.lower().endswith('.mov')])
 
-total_size = 0
+QUALITY_TIERS = {
+    '480p':  {'scale': '-2:480',  'crf': '32', 'preset': 'slow'},
+    '720p':  {'scale': '-2:720',  'crf': '28', 'preset': 'medium'},
+    '1080p': {'scale': '-2:1080', 'crf': '24', 'preset': 'medium'},
+}
 
-for f in mov_files:
-    base = os.path.splitext(f)[0]
-    mov_path = os.path.join(vdir, f)
-    mp4_path = os.path.join(out_dir, f"{base}.mp4")
+grand_total = 0
 
-    # Get duration of source file
-    probe = subprocess.run(
-        [ffmpeg, '-i', mov_path],
-        capture_output=True, text=True
-    )
+for tier_name, settings in QUALITY_TIERS.items():
+    out_dir = os.path.join(vdir, tier_name)
+    os.makedirs(out_dir, exist_ok=True)
     
-    print(f"\n--- Compressing {f} -> {base}.mp4 ---")
-
-    # Aggressive compression:
-    # - Scale to 480p height (maintains aspect ratio)
-    # - CRF 32 (lower quality but much smaller)
-    # - No audio (these are background/portfolio videos)
-    # - Max 30 seconds
-    # - faststart for web streaming
-    # - yuv420p for maximum browser compatibility
-    cmd = [
-        ffmpeg, '-y',
-        '-i', mov_path,
-        '-t', '30',                          # max 30 seconds
-        '-vf', 'scale=-2:480',               # 480p height
-        '-vcodec', 'libx264',
-        '-crf', '32',                         # aggressive compression
-        '-preset', 'slow',                    # better compression ratio
-        '-pix_fmt', 'yuv420p',                # browser compatibility
-        '-movflags', '+faststart',            # web streaming
-        '-an',                                # strip audio
-        '-profile:v', 'baseline',             # widest device compatibility
-        '-level', '3.0',
-        mp4_path
-    ]
-
-    result = subprocess.run(cmd, capture_output=True, text=True)
+    tier_total = 0
+    print(f"\n{'='*50}")
+    print(f"  TIER: {tier_name} (CRF {settings['crf']}, {settings['scale']})")
+    print(f"{'='*50}")
     
-    if result.returncode != 0:
-        print(f"  ERROR: {result.stderr[-500:]}")
-        continue
-
-    size_mb = os.path.getsize(mp4_path) / (1024 * 1024)
-    total_size += size_mb
-    print(f"  DONE: {size_mb:.2f} MB")
+    for f in mov_files:
+        base = os.path.splitext(f)[0]
+        mov_path = os.path.join(vdir, f)
+        mp4_path = os.path.join(out_dir, f"{base}.mp4")
+        
+        print(f"  Compressing {f} -> {tier_name}/{base}.mp4 ...", end=' ', flush=True)
+        
+        cmd = [
+            ffmpeg, '-y',
+            '-i', mov_path,
+            '-t', '30',
+            '-vf', f'scale={settings["scale"]}',
+            '-vcodec', 'libx264',
+            '-crf', settings['crf'],
+            '-preset', settings['preset'],
+            '-pix_fmt', 'yuv420p',
+            '-movflags', '+faststart',
+            '-an',
+            '-profile:v', 'baseline',
+            '-level', '3.1',
+            mp4_path
+        ]
+        
+        result = subprocess.run(cmd, capture_output=True, text=True)
+        
+        if result.returncode != 0:
+            print(f"ERROR")
+            print(f"    {result.stderr[-300:]}")
+            continue
+        
+        size_mb = os.path.getsize(mp4_path) / (1024 * 1024)
+        tier_total += size_mb
+        print(f"{size_mb:.2f} MB")
+    
+    grand_total += tier_total
+    print(f"  --- Tier total: {tier_total:.2f} MB ---")
 
 print(f"\n{'='*50}")
-print(f"Total compressed size: {total_size:.2f} MB")
-print(f"Files saved to: {out_dir}")
-print(f"\nNext steps:")
-print(f"  1. Review the compressed videos in {out_dir}")
-print(f"  2. If happy, replace the originals:")
-print(f"     - Delete old MP4s from public/videos/")
-print(f"     - Move compressed MP4s to public/videos/")
-print(f"  3. Remove LFS tracking for .mp4 files")
-print(f"  4. Commit and push")
+print(f"  GRAND TOTAL: {grand_total:.2f} MB")
+print(f"{'='*50}")
+print(f"\nDone! Quality tiers saved to public/videos/480p/, 720p/, 1080p/")

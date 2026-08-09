@@ -1,5 +1,13 @@
 import Image from 'next/image';
+import VideoPlayer from './VideoPlayer';
 import styles from './ProjectCard.module.css';
+
+/** Extract the video filename (without extension) from a path like "/videos/IMG_0046.mp4" */
+function getVideoId(videoPath) {
+  if (!videoPath) return null;
+  const filename = videoPath.split('/').pop(); // "IMG_0046.mp4"
+  return filename.replace(/\.mp4$/i, '');      // "IMG_0046"
+}
 
 export default function ProjectCard({ project, aspect = 'standard' }) {
   const aspectClass =
@@ -12,22 +20,18 @@ export default function ProjectCard({ project, aspect = 'standard' }) {
       : styles.aspectStandard;
 
   const isVideoCategory = project.category?.toLowerCase().includes('video') || project.video;
+  const videoId = getVideoId(project.video);
 
   return (
     <div className={styles.card}>
       <div className={`${styles.imageWrapper} ${aspectClass}`}>
-        {project.video ? (
-          <video
+        {videoId ? (
+          <VideoPlayer
+            videoId={videoId}
             poster={project.image}
-            autoPlay
-            loop
-            muted
-            playsInline
-            preload="auto"
-            className={styles.image}
-          >
-            <source src={project.video} type="video/mp4" />
-          </video>
+            className={styles.videoFill}
+            defaultQuality="480p"
+          />
         ) : (
           <img
             src={project.image}
@@ -71,3 +75,4 @@ export default function ProjectCard({ project, aspect = 'standard' }) {
     </div>
   );
 }
+

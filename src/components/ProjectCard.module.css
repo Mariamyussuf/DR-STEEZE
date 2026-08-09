@@ -43,6 +43,21 @@
   filter: grayscale(0%) brightness(105%);
 }
 
+.videoFill {
+  width: 100%;
+  height: 100%;
+}
+
+.videoFill video {
+  transition: transform 0.9s cubic-bezier(0.16, 1, 0.3, 1), filter 0.7s ease;
+  filter: grayscale(15%) brightness(95%);
+}
+
+.card:hover .videoFill video {
+  transform: scale(1.05);
+  filter: grayscale(0%) brightness(105%);
+}
+
 .goldLine {
   position: absolute;
   bottom: 0;
