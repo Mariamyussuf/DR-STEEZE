@@ -19,7 +19,7 @@ export default function Home() {
           videoId="IMG_0046"
           poster="/images/poster_IMG_0046.jpg"
           className={styles.heroBackgroundVideo}
-          showControls={false}
+          showControls={true}
           defaultQuality="720p"
         />
         <HeroBackground className={styles.heroBgCanvas} />

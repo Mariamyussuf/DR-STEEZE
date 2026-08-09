@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ScrollReveal from '@/components/ScrollReveal';
 import ProjectCard from '@/components/ProjectCard';
+import VideoPlayer from '@/components/VideoPlayer';
 import { projects } from '@/data/projects';
 import styles from './portfolio.module.css';
 
@@ -85,16 +86,13 @@ export default function PortfolioPage() {
             </button>
 
             {selectedProject.video ? (
-              <video
+              <VideoPlayer
+                videoId={selectedProject.video.split('/').pop().replace(/\.mp4$/i, '')}
                 poster={selectedProject.image}
-                controls
-                autoPlay
-                playsInline
-                preload="auto"
                 className={styles.modalImage}
-              >
-                <source src={selectedProject.video} type="video/mp4" />
-              </video>
+                defaultQuality="720p"
+                showControls={true}
+              />
             ) : (
               <img
                 src={selectedProject.image}

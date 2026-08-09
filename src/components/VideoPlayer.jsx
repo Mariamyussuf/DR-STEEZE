@@ -81,10 +81,14 @@ export default function VideoPlayer({
       </video>
 
       {showControls && (
-        <div className={styles.controls} ref={menuRef}>
+        <div className={styles.controls} ref={menuRef} onClick={(e) => e.stopPropagation()}>
           <button
             className={styles.qualityButton}
-            onClick={() => setMenuOpen((v) => !v)}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              setMenuOpen((v) => !v);
+            }}
             aria-label="Select video quality"
             title="Video quality"
           >
@@ -95,13 +99,15 @@ export default function VideoPlayer({
           </button>
 
           {menuOpen && (
-            <div className={styles.menu}>
+            <div className={styles.menu} onClick={(e) => e.stopPropagation()}>
               <span className={styles.menuTitle}>Quality</span>
               {QUALITY_OPTIONS.map((opt) => (
                 <button
                   key={opt.key}
                   className={`${styles.menuItem} ${quality === opt.key ? styles.menuItemActive : ''}`}
-                  onClick={() => {
+                  onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     setQuality(opt.key);
                     setMenuOpen(false);
                   }}

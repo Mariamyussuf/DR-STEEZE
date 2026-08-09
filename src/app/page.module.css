@@ -27,6 +27,11 @@
   object-fit: cover;
 }
 
+.heroBackgroundVideo :global([class*="controls"]) {
+  pointer-events: auto;
+  z-index: 20;
+}
+
 .heroGradient {
   position: absolute;
   inset: 0;
