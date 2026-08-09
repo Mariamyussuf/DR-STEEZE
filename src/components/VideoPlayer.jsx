@@ -48,12 +48,22 @@ export default function VideoPlayer({
 
     const nextMuted = !isMuted;
     video.muted = nextMuted;
+    video.volume = nextMuted ? 0 : 1.0;
     setIsMuted(nextMuted);
 
     if (!nextMuted) {
       video.play().catch(() => {});
     }
   };
+
+  // Sync muted property when isMuted state changes without reloading the video stream
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video) {
+      video.muted = isMuted;
+      video.volume = isMuted ? 0 : 1.0;
+    }
+  }, [isMuted]);
 
   // When quality changes, seamlessly switch src and preserve playback time & state
   useEffect(() => {
@@ -77,6 +87,7 @@ export default function VideoPlayer({
         }
       }
       video.muted = isMuted;
+      video.volume = isMuted ? 0 : 1.0;
       if (isPlaying || autoPlay) {
         video.play().catch(() => {});
       }
@@ -85,7 +96,7 @@ export default function VideoPlayer({
     video.addEventListener('loadedmetadata', handleMetadata, { once: true });
     video.src = videoSrc;
     video.load();
-  }, [quality, videoSrc, autoPlay, isMuted]);
+  }, [quality, videoSrc, autoPlay]);
 
   // Close menu when clicking outside
   useEffect(() => {
