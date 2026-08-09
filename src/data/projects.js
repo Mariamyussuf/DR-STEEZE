@@ -46,61 +46,61 @@ export const projects = [
   },
   {
     id: "school-fashion-contest",
-    title: "School Fashion Contest",
+    title: "School Traditional Content",
     category: "Fashion Videography",
-    subCategory: "Runway & Event Motion",
+    subCategory: "Traditional Showcase & Cultural Motion",
     year: "2026",
     video: "/videos/IMG_0064.mp4",
     image: "/images/poster_IMG_0064.jpg",
-    alt: "School fashion contest video thumbnail",
+    alt: "School traditional content video thumbnail",
     featured: true,
     gridClass: "wide",
-    description: "Energetic runway coverage and live motion recap for school fashion contest showcase.",
+    description: "Energetic runway coverage and live motion recap for school traditional content showcase.",
     client: "Fashion Academy",
     role: "Lead Videographer"
   },
   {
     id: "fashion-short-film",
-    title: "Fashion Short Film",
-    category: "Fashion Videography",
-    subCategory: "Cinematic Fashion Motion",
+    title: "Fashion X Commercial Videography",
+    category: "Commercial Videography",
+    subCategory: "Fashion X Commercial Motion",
     year: "2026",
     video: "/videos/IMG_0069.mp4",
     image: "/images/poster_IMG_0069.jpg",
-    alt: "Fashion short film video thumbnail",
+    alt: "Fashion X Commercial videography thumbnail",
     featured: false,
     gridClass: "standard",
-    description: "High-contrast cinematic fashion film exploring form, silhouette, movement, and mood.",
+    description: "High-contrast cinematic fashion film exploring form, silhouette, commercial movement, and mood.",
     client: "Editorial Commission",
     role: "Lead Director & Cinematographer"
   },
   {
-    id: "fashion-x-commercial",
-    title: "Fashion X Commercial",
+    id: "street-videography-motion",
+    title: "Street Videography",
     category: "Commercial Videography",
-    subCategory: "Commercial Fashion Campaign",
+    subCategory: "Street Videography",
     year: "2026",
     video: "/videos/IMG_0070.mp4",
     image: "/images/poster_IMG_0070.jpg",
-    alt: "Fashion X Commercial video thumbnail",
+    alt: "Street videography video thumbnail",
     featured: false,
     gridClass: "tall",
-    description: "Dynamic crossover campaign fusing high-fashion aesthetics with commercial brand storytelling.",
-    client: "Luxe Brand Client",
+    description: "Raw, dynamic street videography capturing urban fashion aesthetics, movement, and mood on location.",
+    client: "Streetwear Brand",
     role: "Director of Photography & Editor"
   },
   {
     id: "street-videography",
     title: "Street Videography",
-    category: "Commercial Videography",
-    subCategory: "Urban & Street Motion",
+    category: "Fashion Videography",
+    subCategory: "Street Fashion Videography",
     year: "2026",
     video: "/videos/IMG_0076.mp4",
     image: "/images/poster_IMG_0076.jpg",
     alt: "Street videography video thumbnail",
     featured: false,
     gridClass: "square",
-    description: "Raw, atmospheric street video coverage capturing spontaneous urban energy and style.",
+    description: "Raw, atmospheric street video coverage capturing spontaneous urban fashion energy and style.",
     client: "Independent Shoot",
     role: "Videographer"
   },
@@ -155,7 +155,7 @@ export const servicesList = [
     icon: "movie",
     tagline: "Fashion Short Films, Street X Fashion & Contest Motion",
     description: "High-contrast cinematic fashion motion pictures, runway coverage, street fashion videography, lookbook video campaigns, and fashion short films.",
-    deliverables: ["Fashion Short Films", "Street X Fashion Videography", "School Fashion Contest Coverage", "Social Motion & Reels"]
+    deliverables: ["Fashion Short Films", "Street X Fashion Videography", "School Traditional Content", "Social Motion & Reels"]
   },
   {
     id: "commercial-videography",
@@ -163,7 +163,7 @@ export const servicesList = [
     icon: "videocam",
     tagline: "Vendor Content, Street Videography & Brand Spots",
     description: "End-to-end commercial video production—from vendor promo content and street videography to dynamic commercial campaigns.",
-    deliverables: ["Content for Vendors", "Street Videography", "Fashion X Commercial Campaigns", "Product Motion Films"]
+    deliverables: ["Content for Vendors", "Street Videography", "Street Videography Campaigns", "Product Motion Films"]
   },
   {
     id: "podcast-videography",
@@ -215,10 +215,19 @@ export const cultureOfZionData = {
 export const aboutData = {
   name: "Sobayo Deborah Oluwaseyitan",
   brand: "DR STEEZE",
-  role: "Fashion & Commercial Videographer & Photographer",
-  headline: "Capturing Motion & Vision",
-  philosophy: "I am Sobayo Deborah Oluwaseyitan (DR STEEZE), a Fashion & Commercial Videographer and Photographer based in Nigeria. I specialize in fashion short films, street videography, vendor content, podcast production, and high-contrast editorial photography.",
-  established: "EST. 2026 (IN MOTION)",
+  role: "Multidisciplinary Visual Storyteller",
+  headline: "Multidisciplinary Visual Storyteller",
+  philosophy: "I am a multidisciplinary visual storyteller with a passion for turning ideas, people, products, and everyday experiences into compelling visual stories.",
+  bioParagraphs: [
+    "I am a multidisciplinary visual storyteller with a passion for turning ideas, people, products, and everyday experiences into compelling visual stories.",
+    "My work spans fashion, commercial content, photography, documentary, street videography, events, lifestyle, and brand storytelling. I enjoy working across different creative environments, from creating fashion-driven visuals with models to capturing the energy of the streets, documenting places and experiences, and developing commercial content that presents products and brands in an engaging way.",
+    "I approach every project with a combination of creativity, observation, planning, and storytelling. For me, creating content is not simply about recording what is in front of the camera; it is about deciding how a story should look, feel, move, and connect with the audience.",
+    "My background also extends beyond visual media. I am a handmade leather craftsman, which has given me firsthand experience with product creation, fashion, craftsmanship, branding, and understanding how a product can be presented to an audience. I also have a musical background, playing the keyboard and talking drum, with knowledge of music and production. This influences my understanding of rhythm, timing, sound, and pacing when creating and editing visual content.",
+    "I am currently pursuing a B.Eng. in Civil Engineering, which has strengthened my ability to approach projects with structure, attention to detail, problem-solving, and organization. I bring that same mindset into my creative work while allowing creativity to lead the process.",
+    "As DR STEEZE™, my goal is to continue developing as a visual storyteller, collaborate with brands and creative teams, and create work across fashion, commercial, documentary, and lifestyle spaces.",
+    "I create to tell stories, build identities, and turn ideas into visuals."
+  ],
+  established: "MULTIDISCIPLINARY CREATIVE",
   locations: "NIGERIA / INTERNATIONAL",
   email: "deborahsobayo@gmail.com",
   phone: "+234 708 031 0627",
@@ -226,9 +235,9 @@ export const aboutData = {
   tiktok: "@ayan_tofunmi",
   portrait: "/images/IMG_9481.jpg",
   stats: [
-    { value: "6 MO", label: "Dedicated Journey" },
-    { value: "7+", label: "Video Commissions" },
-    { value: "4K", label: "Cinematic Quality" },
-    { value: "100%", label: "Client Satisfaction" }
+    { value: "MULTIDISCIPLINARY", label: "Visual Storyteller" },
+    { value: "CRAFTSMAN", label: "Leather & Sound" },
+    { value: "CIVIL B.ENG", label: "Structured Vision" },
+    { value: "100%", label: "Creative Drive" }
   ]
 };

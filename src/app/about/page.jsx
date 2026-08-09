@@ -44,7 +44,15 @@ export default function AboutPage() {
                 Biography & Philosophy
               </span>
               <h1 className={styles.title}>{aboutData.headline}</h1>
-              <p className={styles.philosophy}>{aboutData.philosophy}</p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', margin: '24px 0 32px' }}>
+                {aboutData.bioParagraphs.map((para, idx) => (
+                  <p key={idx} className={styles.philosophy} style={{ margin: 0, fontSize: idx === 0 ? 'clamp(18px, 2.2vw, 22px)' : 'clamp(15px, 1.8vw, 17px)', opacity: idx === 0 ? 1 : 0.9 }}>
+                    {para}
+                  </p>
+                ))}
+              </div>
+
               <div className={styles.tagRow}>
                 <span className={styles.tag}>{aboutData.established}</span>
                 <span className={styles.tag}>{aboutData.locations}</span>
