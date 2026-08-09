@@ -67,14 +67,14 @@ export default function Home() {
         <div className="container-custom">
           <div className={styles.sectionHeader}>
             <div>
-              <span className="label-caps" style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '8px' }}>
+              <span className={`label-caps ${styles.goldLabel}`}>
                 Curated Works
               </span>
               <KineticText as="h3" className="headline-xl">
                 Featured Works
               </KineticText>
             </div>
-            <Link href="/portfolio" className="ghost-button" style={{ fontSize: '11px', padding: '12px 28px' }}>
+            <Link href="/portfolio" className={`ghost-button ${styles.headerButton}`}>
               View Full Archive
             </Link>
           </div>
@@ -82,7 +82,7 @@ export default function Home() {
           <div className={styles.featuredGrid}>
             <div className={styles.col8}>
               <ScrollReveal animation="scale-up">
-                <Link href="/portfolio" style={{ textDecoration: 'none' }}>
+                <Link href="/portfolio" className={styles.cardLink}>
                   <ProjectCard project={featuredProjects[0]} aspect="wide" />
                 </Link>
               </ScrollReveal>
@@ -90,7 +90,7 @@ export default function Home() {
 
             <div className={styles.col4}>
               <ScrollReveal delay={1} animation="scale-up">
-                <Link href="/portfolio" style={{ textDecoration: 'none' }}>
+                <Link href="/portfolio" className={styles.cardLink}>
                   <ProjectCard project={featuredProjects[1]} aspect="tall" />
                 </Link>
               </ScrollReveal>
@@ -98,7 +98,7 @@ export default function Home() {
 
             <div className={styles.col5}>
               <ScrollReveal animation="scale-up">
-                <Link href="/portfolio" style={{ textDecoration: 'none' }}>
+                <Link href="/portfolio" className={styles.cardLink}>
                   <ProjectCard project={featuredProjects[2]} aspect="square" />
                 </Link>
               </ScrollReveal>
@@ -106,7 +106,7 @@ export default function Home() {
 
             <div className={styles.col7}>
               <ScrollReveal delay={2} animation="scale-up">
-                <Link href="/portfolio" style={{ textDecoration: 'none' }}>
+                <Link href="/portfolio" className={styles.cardLink}>
                   <ProjectCard project={featuredProjects[3]} aspect="wide" />
                 </Link>
               </ScrollReveal>
@@ -138,16 +138,16 @@ export default function Home() {
           </ScrollReveal>
 
           {/* Services Section */}
-          <div className={styles.sectionHeader} style={{ marginTop: '80px' }}>
+          <div className={`${styles.sectionHeader} ${styles.servicesSectionHeader}`}>
             <div>
-              <span className="label-caps" style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '8px' }}>
+              <span className={`label-caps ${styles.goldLabel}`}>
                 Capabilities
               </span>
               <KineticText as="h3" className="headline-xl">
                 Services
               </KineticText>
             </div>
-            <Link href="/services" className="ghost-button" style={{ fontSize: '11px', padding: '12px 28px' }}>
+            <Link href="/services" className={`ghost-button ${styles.headerButton}`}>
               All Capabilities
             </Link>
           </div>

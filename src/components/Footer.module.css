@@ -29,7 +29,7 @@
 
 .brand {
   font-family: var(--font-heading);
-  font-size: clamp(48px, 9vw, 130px);
+  font-size: clamp(32px, 8vw, 130px);
   font-weight: 700;
   line-height: 0.95;
   letter-spacing: -0.02em;

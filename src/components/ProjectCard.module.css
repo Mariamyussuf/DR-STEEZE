@@ -58,6 +58,30 @@
   filter: grayscale(0%) brightness(105%);
 }
 
+.motionBadge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: rgba(13, 13, 13, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: var(--color-gold);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 2px;
+  border: 1px solid var(--color-border-gold);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 3;
+}
+
+.motionIcon {
+  font-size: 14px;
+}
+
 .goldLine {
   position: absolute;
   bottom: 0;

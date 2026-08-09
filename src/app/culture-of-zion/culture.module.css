@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   min-height: 90vh;
+  min-height: 90dvh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,6 +148,8 @@
   flex: 0 0 65vw;
   max-width: 800px;
   height: 70vh;
+  height: 70dvh;
+  min-height: 380px;
   max-height: 600px;
   position: relative;
   overflow: hidden;
@@ -203,6 +206,8 @@
   .galleryCard {
     flex: 0 0 88vw;
     height: 50vh;
+    height: 50dvh;
+    min-height: 320px;
   }
 
   .galleryCardOverlay {

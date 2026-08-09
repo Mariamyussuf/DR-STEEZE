@@ -1,6 +1,7 @@
 .hero {
   position: relative;
   min-height: 100vh;
+  min-height: 100dvh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -166,6 +167,25 @@
   gap: 20px;
 }
 
+.goldLabel {
+  color: var(--color-gold);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.headerButton {
+  font-size: 11px;
+  padding: 12px 28px;
+}
+
+.cardLink {
+  text-decoration: none;
+}
+
+.servicesSectionHeader {
+  margin-top: 80px;
+}
+
 .featuredGrid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -275,6 +295,7 @@
     padding-top: 100px;
     padding-bottom: 60px;
     min-height: 85vh;
+    min-height: 85dvh;
   }
 
   .cozBanner {

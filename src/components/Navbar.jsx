@@ -42,8 +42,8 @@ export default function Navbar() {
     <>
       <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
         <div className={`container-custom ${styles.inner}`}>
-          <Link href="/" className={styles.brand} style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            <img src="/images/logo.jpg" alt="DR STEEZE" style={{ height: '36px', width: 'auto', borderRadius: '4px' }} />
+          <Link href="/" className={styles.brand}>
+            <img src="/images/logo.jpg" alt="DR STEEZE" className={styles.logoImg} />
             <span>DR STEEZE</span>
           </Link>
 
@@ -63,7 +63,7 @@ export default function Navbar() {
             })}
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+          <div className={styles.rightActions}>
             <Link href="/contact" className={`ghost-button ${styles.ctaBtn}`}>
               Work With Me
             </Link>
@@ -95,8 +95,7 @@ export default function Navbar() {
         ))}
         <Link
           href="/contact"
-          className="primary-button"
-          style={{ marginTop: '24px' }}
+          className={`primary-button ${styles.mobileCta}`}
           onClick={() => setMobileMenuOpen(false)}
         >
           Work With Me

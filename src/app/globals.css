@@ -50,6 +50,7 @@ html {
 
 body {
   min-height: 100vh;
+  min-height: 100dvh;
   background-color: var(--color-bg);
   color: var(--color-text);
   overflow-x: hidden;
@@ -60,6 +61,13 @@ body {
 /* Prevent mobile iOS zoom on form inputs */
 input, select, textarea {
   font-size: 16px !important;
+}
+
+/* Global responsive media safety rule */
+img:not([class*="heroBackgroundVideo"]):not([class*="portrait"]):not([class*="cozImage"]):not([class*="heroBgCanvas"]),
+video:not([class*="heroBackgroundVideo"]):not([class*="video"]) {
+  max-width: 100%;
+  height: auto;
 }
 
 /* Material Symbols Outlined */
@@ -226,6 +234,13 @@ input, select, textarea {
   margin-right: auto;
   padding-left: var(--spacing-desktop-margin);
   padding-right: var(--spacing-desktop-margin);
+}
+
+@media (max-width: 900px) {
+  .container-custom {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
 }
 
 @media (max-width: 768px) {

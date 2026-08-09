@@ -163,6 +163,45 @@
   margin-top: 4px;
 }
 
+.modalGoldCategory {
+  color: var(--color-gold);
+  display: block;
+}
+
+.modalTitle {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.modalDesc {
+  margin-bottom: 32px;
+}
+
+.modalGallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 24px;
+}
+
+.galleryImg {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+@media (max-width: 600px) {
+  .modalGallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .galleryImg {
+    height: 200px;
+  }
+}
+
 @media (max-width: 1024px) {
   .masonryGrid {
     column-count: 2;

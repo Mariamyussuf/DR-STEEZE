@@ -102,10 +102,10 @@ export default function PortfolioPage() {
               />
             )}
 
-            <span className="label-caps" style={{ color: 'var(--color-gold)' }}>
+            <span className={`label-caps ${styles.modalGoldCategory}`}>
               {selectedProject.category} — {selectedProject.year}
             </span>
-            <h2 className="headline-xl" style={{ marginTop: '8px', marginBottom: '16px' }}>
+            <h2 className={`headline-xl ${styles.modalTitle}`}>
               {selectedProject.title}
             </h2>
 
@@ -124,14 +124,14 @@ export default function PortfolioPage() {
               </div>
             </div>
 
-            <p className="body-lg" style={{ marginBottom: '32px' }}>
+            <p className={`body-lg ${styles.modalDesc}`}>
               {selectedProject.description}
             </p>
 
             {selectedProject.gallery && (
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginTop: '24px' }}>
+              <div className={styles.modalGallery}>
                 {selectedProject.gallery.map((img, i) => (
-                  <img key={i} src={img} alt="Gallery view" style={{ width: '100%', height: '260px', objectFit: 'cover' }} />
+                  <img key={i} src={img} alt="Gallery view" className={styles.galleryImg} />
                 ))}
               </div>
             )}
