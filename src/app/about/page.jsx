@@ -5,22 +5,22 @@ import styles from './about.module.css';
 export default function AboutPage() {
   const journeyTimeline = [
     {
-      year: 'MONTH 5 - 6',
-      role: 'Fashion & Commercial Videographer & Director',
-      company: 'DR STEEZE Studio',
-      description: 'Directing high-contrast fashion short films, vendor commercial spots, and podcast video productions across Nigeria.'
+      year: 'RECENT 6 MONTHS',
+      role: 'DR STEEZE — Professional Studio & Brand',
+      company: 'Dedicated Business Focus',
+      description: 'Established DR STEEZE as an independent professional creative studio—directing high-impact commercial campaigns, fashion motion, vendor spots, and multi-cam podcast video productions.'
     },
     {
-      year: 'MONTH 3 - 4',
-      role: 'Fashion Photography & Event Motion',
-      company: 'Lagos & Regional Shoots',
-      description: 'Capturing school fashion contests, streetwear lookbooks, and high-contrast model portraiture.'
+      year: '1 YEAR TIMELINE',
+      role: 'Visual Content Creator & Storyteller',
+      company: 'Personal & Business Channels',
+      description: 'Creating and refining visual content over the past year across personal and business platforms, developing a distinct voice in fashion, street videography, lifestyle, and brand storytelling.'
     },
     {
-      year: 'MONTH 1 - 2',
-      role: 'Independent Visual Storyteller',
-      company: 'Brand Launch',
-      description: 'Launched DR STEEZE visual brand, focusing on high-contrast lighting, movement tracking, and 4K color grading.'
+      year: 'FOUNDATION',
+      role: 'Leather Craftsmanship, Music & Civil Engineering',
+      company: 'Multidisciplinary Roots',
+      description: 'Fusing hands-on leather product craftsmanship, musical rhythm & timing (keyboard & talking drum), and Civil Engineering structural problem-solving into creative visual direction.'
     }
   ];
 
