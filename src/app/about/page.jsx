@@ -11,10 +11,10 @@ export default function AboutPage() {
       description: 'Established DR STEEZE as an independent professional creative studio—directing high-impact commercial campaigns, fashion motion, vendor spots, and multi-cam podcast video productions.'
     },
     {
-      year: '1 YEAR TIMELINE',
-      role: 'Visual Content Creator & Storyteller',
-      company: 'Personal & Business Channels',
-      description: 'Creating and refining visual content over the past year across personal and business platforms, developing a distinct voice in fashion, street videography, lifestyle, and brand storytelling.'
+      year: '3+ YEARS TIMELINE',
+      role: 'Directing & Video Production Experience',
+      company: 'YouTube & Digital Video Production',
+      description: 'Over 3 years of experience directing and producing video content—starting from directing YouTube videos and collaborative creative projects, developing a sharp eye for framing, pacing, and visual storytelling.'
     },
     {
       year: 'FOUNDATION',

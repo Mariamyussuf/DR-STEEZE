@@ -90,17 +90,17 @@ export const projects = [
     role: "Director of Photography & Editor"
   },
   {
-    id: "street-videography",
-    title: "Street Videography",
+    id: "fashion-videography",
+    title: "Fashion Videography",
     category: "Fashion Videography",
-    subCategory: "Street Fashion Videography",
+    subCategory: " Fashion Videography",
     year: "2026",
     video: "/videos/IMG_0076.mp4",
     image: "/images/poster_IMG_0076.jpg",
     alt: "Street videography video thumbnail",
     featured: false,
     gridClass: "square",
-    description: "Raw, atmospheric street video coverage capturing spontaneous urban fashion energy and style.",
+    description: "Raw, atmospheric fashion video coverage capturing spontaneous urban fashion energy and style.",
     client: "Independent Shoot",
     role: "Videographer"
   },
@@ -220,7 +220,7 @@ export const aboutData = {
   philosophy: "I am a multidisciplinary visual storyteller with a passion for turning ideas, people, products, and everyday experiences into compelling visual stories.",
   bioParagraphs: [
     "I am a multidisciplinary visual storyteller with a passion for turning ideas, people, products, and everyday experiences into compelling visual stories.",
-    "My work spans fashion, commercial content, photography, documentary, street videography, events, lifestyle, and brand storytelling. I enjoy working across different creative environments, from creating fashion-driven visuals with models to capturing the energy of the streets, documenting places and experiences, and developing commercial content that presents products and brands in an engaging way.",
+    "With over 3 years of directing and video production experience—starting with directing YouTube video content and collaborative creator projects—my work spans fashion, commercial content, photography, documentary, street videography, events, lifestyle, and brand storytelling. I enjoy working across different creative environments, from creating fashion-driven visuals with models to capturing the energy of the streets, documenting places and experiences, and developing commercial content that presents products and brands in an engaging way.",
     "I approach every project with a combination of creativity, observation, planning, and storytelling. For me, creating content is not simply about recording what is in front of the camera; it is about deciding how a story should look, feel, move, and connect with the audience.",
     "My background also extends beyond visual media. I am a handmade leather craftsman, which has given me firsthand experience with product creation, fashion, craftsmanship, branding, and understanding how a product can be presented to an audience. I also have a musical background, playing the keyboard and talking drum, with knowledge of music and production. This influences my understanding of rhythm, timing, sound, and pacing when creating and editing visual content.",
     "I am currently pursuing a B.Eng. in Civil Engineering, which has strengthened my ability to approach projects with structure, attention to detail, problem-solving, and organization. I bring that same mindset into my creative work while allowing creativity to lead the process.",
@@ -235,7 +235,7 @@ export const aboutData = {
   tiktok: "@ayan_tofunmi",
   portrait: "/images/IMG_9481.jpg",
   stats: [
-    { value: "1 YEAR", label: "Content Creation Journey" },
+    { value: "3+ YEARS", label: "Directing & Production Experience" },
     { value: "6 MONTHS", label: "Professional Studio Business" },
     { value: "CRAFTSMAN", label: "Leather, Sound & Civil B.Eng" },
     { value: "100%", label: "Creative Drive" }
