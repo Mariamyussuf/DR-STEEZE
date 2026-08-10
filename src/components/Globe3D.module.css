@@ -1,0 +1,259 @@
+.globeWrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 480px;
+  background: radial-gradient(circle at 50% 50%, rgba(20, 20, 25, 0.9) 0%, rgba(10, 10, 12, 0.98) 100%);
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), inset 0 0 40px rgba(197, 160, 89, 0.05);
+}
+
+.compactWrapper {
+  min-height: 320px;
+  max-height: 380px;
+}
+
+.canvasContainer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+}
+
+.canvasContainer:active {
+  cursor: grabbing;
+}
+
+.hudOverlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+/* Top HUD Bar */
+.hudTopBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(13, 13, 13, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  padding: 8px 16px;
+  border-radius: 4px;
+  pointer-events: auto;
+}
+
+.hudBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hudPulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ffd700;
+  box-shadow: 0 0 10px #ffd700;
+  animation: pulseGlow 1.8s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+.hudLabel {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-gold);
+}
+
+.hudCoords {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--color-text);
+  text-shadow: 0 0 8px rgba(197, 160, 89, 0.4);
+}
+
+/* Center Crosshair */
+.crosshair {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.crosshairH {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+.crosshairV {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, var(--color-gold), transparent);
+}
+
+.crosshairCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  border: 1px solid var(--color-gold);
+  border-radius: 50%;
+}
+
+/* Bottom HUD Bar */
+.hudBottomBar {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.locationSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.locBtn {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  background: rgba(18, 18, 20, 0.85);
+  backdrop-filter: blur(6px);
+  color: var(--color-text-muted);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.locBtn:hover {
+  color: var(--color-text);
+  border-color: var(--color-gold);
+  background: rgba(197, 160, 89, 0.15);
+}
+
+.locBtnActive {
+  color: #111;
+  background: var(--color-gold);
+  border-color: var(--color-gold);
+  font-weight: 700;
+  box-shadow: 0 0 12px rgba(197, 160, 89, 0.4);
+}
+
+/* Active Location Card */
+.activeLocCard {
+  background: rgba(13, 13, 13, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(197, 160, 89, 0.25);
+  border-left: 3px solid var(--color-gold);
+  padding: 12px 16px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.locHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.locTitle {
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text);
+}
+
+.locRegion {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  color: var(--color-tertiary);
+}
+
+.locCoordsVal {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 11px;
+  color: var(--color-gold);
+  letter-spacing: 0.1em;
+}
+
+.locRole {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--color-text-muted);
+}
+
+/* Responsive queries */
+@media (max-width: 768px) {
+  .globeWrapper {
+    min-height: 380px;
+    padding: 0;
+  }
+
+  .hudOverlay {
+    padding: 12px;
+  }
+
+  .hudTopBar {
+    padding: 6px 12px;
+  }
+
+  .hudCoords {
+    font-size: 11px;
+  }
+
+  .locBtn {
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+
+  .activeLocCard {
+    padding: 10px 12px;
+  }
+
+  .locTitle {
+    font-size: 12px;
+  }
+
+  .locRole {
+    font-size: 10px;
+  }
+}

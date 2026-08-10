@@ -1,4 +1,5 @@
 import ScrollReveal from '@/components/ScrollReveal';
+import Globe3D from '@/components/Globe3D';
 import { aboutData } from '@/data/projects';
 import styles from './about.module.css';
 
@@ -41,9 +42,12 @@ export default function AboutPage() {
           <div className={styles.heroContent}>
             <ScrollReveal>
               <span className="label-caps" style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '12px' }}>
-                Biography & Philosophy
+                {aboutData.affiliation}
               </span>
               <h1 className={styles.title}>{aboutData.headline}</h1>
+              <p style={{ fontFamily: 'var(--font-heading)', fontSize: 'clamp(16px, 2vw, 22px)', color: 'var(--color-gold)', fontStyle: 'italic', margin: '12px 0 20px' }}>
+                {aboutData.tagline}
+              </p>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', margin: '24px 0 32px' }}>
                 {aboutData.bioParagraphs.map((para, idx) => (
@@ -75,6 +79,29 @@ export default function AboutPage() {
               </ScrollReveal>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Global Coordinates & Reach Section */}
+      <section className={styles.globeSection}>
+        <div className="container-custom">
+          <ScrollReveal>
+            <div className={styles.sectionTitleWrapper}>
+              <span className="label-caps" style={{ color: 'var(--color-gold)', display: 'block', marginBottom: '12px' }}>
+                Global Operating Hubs
+              </span>
+              <h2 className="headline-xl">Production Coordinates & Reach</h2>
+              <p className={styles.globeSubtitle}>
+                DR STEEZE directs and produces worldwide, operating between key creative capitals. Select location hubs on the 3D globe to view production coordinates and campaign capabilities.
+              </p>
+            </div>
+          </ScrollReveal>
+
+          <ScrollReveal delay={1} animation="scale-up">
+            <div className={styles.globeWrapperBox}>
+              <Globe3D showHud={true} interactive={true} />
+            </div>
+          </ScrollReveal>
         </div>
       </section>
 

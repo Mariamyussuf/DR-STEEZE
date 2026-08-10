@@ -5,6 +5,7 @@ import KineticText from '@/components/KineticText';
 import ProjectCard from '@/components/ProjectCard';
 import ServiceCard from '@/components/ServiceCard';
 import VideoPlayer from '@/components/VideoPlayer';
+import Globe3D from '@/components/Globe3D';
 import { projects, servicesList, cultureOfZionData } from '@/data/projects';
 import styles from './page.module.css';
 
@@ -19,31 +20,42 @@ export default function Home() {
         <div className={styles.heroGradient} />
 
         <div className={styles.heroContent}>
+          <ScrollReveal delay={0.1} animation="fade-up">
+            <div className={styles.locationBadge}>
+              <span className={styles.locationDot} />
+              <span className={styles.locationBadgeText}>[ LAT 51.5074° N, LNG 0.1278° W ] — GLOBAL EXPANSION VISION</span>
+            </div>
+          </ScrollReveal>
+
           <KineticText as="h1" className={styles.heroTitle} delay={0.2} duration={1.2}>
             DR STEEZE
           </KineticText>
 
+          <ScrollReveal delay={1.5} animation="fade-up">
+            <h2 className={styles.heroRole}>Creative Director & Visual Storyteller</h2>
+          </ScrollReveal>
+
           <ScrollReveal delay={2} animation="fade-up">
-            <div className={styles.heroSubtitleWrapper}>
+            <div className={styles.heroAffiliationWrapper}>
               <div className={styles.heroDivider} />
-              <h2 className={styles.heroSubtitle}>Fashion & Commercial Videography & Photography</h2>
+              <span className={styles.heroAffiliation}>Founder of Culture of Zion — Creative & Media</span>
               <div className={styles.heroDivider} />
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={3} animation="fade-up">
-            <p className={styles.heroSubheading}>
-              Creating high-impact fashion editorial films, runway motion, commercial advertising spots, and striking photography.
+          <ScrollReveal delay={2.5} animation="fade-up">
+            <p className={styles.heroPillars}>
+              Fashion. Culture. Stories. Experiences.
             </p>
           </ScrollReveal>
 
-          <ScrollReveal delay={4} animation="scale-up">
+          <ScrollReveal delay={3} animation="scale-up">
             <div className={styles.heroButtons}>
               <Link href="/portfolio" prefetch={false} className="primary-button">
                 View Portfolio
               </Link>
-              <Link href="/contact" prefetch={false} className="ghost-button">
-                Work With Me
+              <Link href="/culture-of-zion" prefetch={false} className="ghost-button">
+                Culture of Zion
               </Link>
             </div>
           </ScrollReveal>
@@ -52,6 +64,48 @@ export default function Home() {
         <div className={styles.scrollIndicator}>
           <span className={styles.scrollText}>Scroll to explore</span>
           <div className={styles.scrollLine} />
+        </div>
+      </section>
+
+      {/* Global Expansion Vision & 3D Globe Showcase */}
+      <section className={styles.globeSection}>
+        <div className="container-custom">
+          <div className={styles.globeGrid}>
+            <ScrollReveal animation="fade-right">
+              <div className={styles.globeTextCol}>
+                <span className={`label-caps ${styles.goldLabel}`}>
+                  Where We Are Going // Global Vision
+                </span>
+                <KineticText as="h2" className="headline-xl">
+                  Global Expansion & Media Platform
+                </KineticText>
+                <p className={styles.globeDesc}>
+                  The 3D Globe translates a vision of where we are going. Culture of Zion and DR STEEZE are building beyond conventional studio boundaries into a global creative and media platform connecting media, fashion, culture, and live experiences worldwide.
+                </p>
+                <div className={styles.globeStatsRow}>
+                  <div className={styles.globeStatItem}>
+                    <div className={styles.globeStatVal}>GLOBAL</div>
+                    <div className={styles.globeStatLab}>Expansion Trajectory</div>
+                  </div>
+                  <div className={styles.globeStatItem}>
+                    <div className={styles.globeStatVal}>4</div>
+                    <div className={styles.globeStatLab}>COZ Platform Divisions</div>
+                  </div>
+                </div>
+                <div style={{ marginTop: '28px' }}>
+                  <Link href="/culture-of-zion" prefetch={false} className="ghost-button">
+                    Explore Our Vision & Divisions
+                  </Link>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal animation="fade-left" delay={1}>
+              <div className={styles.globeContainerCol}>
+                <Globe3D showHud={true} interactive={true} />
+              </div>
+            </ScrollReveal>
+          </div>
         </div>
       </section>
 
@@ -106,7 +160,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Director Showcase Banner Feature */}
+          {/* Culture of Zion Brand Showcase Banner */}
           <ScrollReveal animation="scale-up">
             <div className={styles.cozBanner}>
               <div className={styles.cozImageWrapper}>
@@ -118,13 +172,18 @@ export default function Home() {
                 />
               </div>
               <div className={styles.cozContent}>
-                <span className={styles.cozBadge}>Director Reel</span>
+                <span className={styles.cozBadge}>Creative & Media Platform</span>
                 <KineticText as="h3" className={styles.cozTitle}>
                   {cultureOfZionData.title}
                 </KineticText>
-                <p className={styles.cozText}>{cultureOfZionData.description}</p>
+                <p className={styles.cozTagline}>
+                  {cultureOfZionData.tagline}
+                </p>
+                <p className={styles.cozText}>
+                  Culture of Zion (COZ) is an emerging creative and media company built around visual storytelling, fashion, culture, and creative experiences—encompassing COZ Productions, COZ Magazine, COZ Events, and COZ Studio.
+                </p>
                 <Link href="/culture-of-zion" prefetch={false} className="primary-button">
-                  Watch Motion Reel
+                  Explore COZ Divisions
                 </Link>
               </div>
             </div>

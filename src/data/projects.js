@@ -184,12 +184,48 @@ export const servicesList = [
 ];
 
 export const cultureOfZionData = {
-  title: "DIRECTOR'S SHOWCASE REEL",
-  subtitle: "Fashion & Commercial Motion Portfolio",
-  description: "Experience high-contrast cinematic storytelling, dynamic camera movement, and pristine color grading across fashion short films, vendor content, and street videography.",
+  title: "CULTURE OF ZION",
+  subtitle: "Creative & Media",
+  tagline: "Fashion. Culture. Stories. Experiences.",
+  founder: "Founded by DR STEEZE",
+  description: "Culture of Zion (COZ) is an emerging creative and media company built around visual storytelling, fashion, culture, and creative experiences.",
+  longOverview: "Founded by DR STEEZE, COZ is being developed beyond a conventional photography and videography studio — with the long-term vision of creating a platform that connects media, production, fashion, culture, and live experiences.",
+  vision: "The goal is to build Culture of Zion into a creative and media platform that doesn’t only create content, but creates experiences, tells stories, develops platforms, and connects people and brands through creativity.",
+  growth: "COZ is currently growing through independent projects, collaborations, client work, and creative experiments while developing these divisions for the future.",
+  callout: "We are open to collaborations, creative partnerships, brand partnerships, event opportunities, and projects that align with this vision.",
   heroImage: "/images/poster_IMG_0046.jpg",
   originImage: "/images/IMG_9481.jpg",
   heroVideo: "/videos/IMG_0046.mp4",
+  divisions: [
+    {
+      id: "coz-productions",
+      name: "COZ Productions",
+      category: "Creative Production Arm",
+      description: "Focused on photography, videography, fashion films, commercial campaigns, documentaries, and visual content for brands, creatives, and organizations.",
+      tags: ["Fashion Films", "Commercial Campaigns", "Documentaries", "Videography", "Photography"]
+    },
+    {
+      id: "coz-magazine",
+      name: "COZ Magazine",
+      category: "Fashion & Culture Publication",
+      description: "A developing fashion and culture publication exploring fashion, street culture, people, creativity, and stories through editorial photography, film, interviews, and documentary storytelling.",
+      tags: ["Street Culture", "Editorial Films", "Creator Interviews", "Documentary Stories"]
+    },
+    {
+      id: "coz-events",
+      name: "COZ Events",
+      category: "Event Production Arm",
+      description: "A developing fashion and creative event production arm focused on fashion shows, showcases, exhibitions, launches, and other creative experiences.",
+      tags: ["Fashion Shows", "Showcases & Exhibitions", "Brand Launches", "Live Experiences"]
+    },
+    {
+      id: "coz-studio",
+      name: "COZ Studio",
+      category: "Creative Production Space",
+      description: "A creative production space envisioned for photography, film, interviews, podcasts, editorial production, and collaborative creative projects.",
+      tags: ["Studio Shoots", "Multi-Cam Podcasts", "Editorial Shoots", "Collaborations"]
+    }
+  ],
   gallery: [
     {
       title: "Street X Fashion",
@@ -215,19 +251,21 @@ export const cultureOfZionData = {
 export const aboutData = {
   name: "Sobayo Deborah Oluwaseyitan",
   brand: "DR STEEZE",
-  role: "Multidisciplinary Visual Storyteller",
-  headline: "Multidisciplinary Visual Storyteller",
+  role: "Creative Director & Visual Storyteller",
+  affiliation: "Founder of Culture of Zion — Creative & Media",
+  tagline: "Fashion. Culture. Stories. Experiences.",
+  headline: "Creative Director & Visual Storyteller",
   philosophy: "I am a multidisciplinary visual storyteller with a passion for turning ideas, people, products, and everyday experiences into compelling visual stories.",
   bioParagraphs: [
-    "I am a multidisciplinary visual storyteller with a passion for turning ideas, people, products, and everyday experiences into compelling visual stories.",
+    "I am Sobayo Deborah Oluwaseyitan (DR STEEZE), a Creative Director and Visual Storyteller. I am the Founder of Culture of Zion — Creative & Media, a platform built at the intersection of Fashion, Culture, Stories, and Experiences.",
     "With over 3 years of directing and video production experience—starting with directing YouTube video content and collaborative creator projects—my work spans fashion, commercial content, photography, documentary, street videography, events, lifestyle, and brand storytelling. I enjoy working across different creative environments, from creating fashion-driven visuals with models to capturing the energy of the streets, documenting places and experiences, and developing commercial content that presents products and brands in an engaging way.",
     "I approach every project with a combination of creativity, observation, planning, and storytelling. For me, creating content is not simply about recording what is in front of the camera; it is about deciding how a story should look, feel, move, and connect with the audience.",
     "My background also extends beyond visual media. I am a handmade leather craftsman, which has given me firsthand experience with product creation, fashion, craftsmanship, branding, and understanding how a product can be presented to an audience. I also have a musical background, playing the keyboard and talking drum, with knowledge of music and production. This influences my understanding of rhythm, timing, sound, and pacing when creating and editing visual content.",
     "I am currently pursuing a B.Eng. in Civil Engineering, which has strengthened my ability to approach projects with structure, attention to detail, problem-solving, and organization. I bring that same mindset into my creative work while allowing creativity to lead the process.",
-    "As DR STEEZE™, my goal is to continue developing as a visual storyteller, collaborate with brands and creative teams, and create work across fashion, commercial, documentary, and lifestyle spaces.",
+    "As DR STEEZE™, my goal is to build Culture of Zion into a leading creative and media platform, collaborate with global brands and creative teams, and create work across fashion, commercial, documentary, and live experience spaces.",
     "I create to tell stories, build identities, and turn ideas into visuals."
   ],
-  established: "MULTIDISCIPLINARY CREATIVE",
+  established: "FOUNDER — CULTURE OF ZION",
   locations: "NIGERIA / INTERNATIONAL",
   email: "deborahsobayo@gmail.com",
   phone: "+234 708 031 0627",
@@ -237,7 +275,8 @@ export const aboutData = {
   stats: [
     { value: "1 YEAR", label: "Content Creation Journey" },
     { value: "6 MONTHS", label: "Professional Studio Business" },
-    { value: "3+", label: "Crafts & Disciplines" },
+    { value: "3+", label: "Directing & Production Yrs" },
     { value: "100%", label: "Creative Dedication" }
   ]
 };
+
