@@ -37,7 +37,7 @@ export default function VideoPlayer({
   const menuRef = useRef(null);
   const isFirstRender = useRef(true);
 
-  const videoSrc = `/videos/${quality}/${videoId}.mp4`;
+  const videoSrc = `/videos/${quality}/${videoId}.mp4?v=2`;
 
   // Toggle sound state
   const toggleSound = (e) => {
@@ -130,7 +130,7 @@ export default function VideoPlayer({
         autoPlay={autoPlay}
         loop={loop}
         muted={isMuted}
-        controls={controls}
+        controls={controls || !isMuted}
         playsInline
         preload="auto"
         className={styles.video}
