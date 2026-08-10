@@ -39,6 +39,18 @@ export default function VideoPlayer({
 
   const videoSrc = `/videos/${quality}/${videoId}.mp4?v=2`;
 
+  // Single active audio listener: Mute this video if another video is unmuted
+  useEffect(() => {
+    const handleOtherUnmuted = (e) => {
+      if (e.detail?.videoId !== videoId) {
+        setIsMuted(true);
+      }
+    };
+
+    window.addEventListener('drsteeze-video-unmuted', handleOtherUnmuted);
+    return () => window.removeEventListener('drsteeze-video-unmuted', handleOtherUnmuted);
+  }, [videoId]);
+
   // Toggle sound state
   const toggleSound = (e) => {
     e.preventDefault();
@@ -54,6 +66,9 @@ export default function VideoPlayer({
       video.setAttribute('muted', '');
     } else {
       video.removeAttribute('muted');
+      window.dispatchEvent(
+        new CustomEvent('drsteeze-video-unmuted', { detail: { videoId } })
+      );
     }
     setIsMuted(nextMuted);
 
@@ -61,6 +76,28 @@ export default function VideoPlayer({
       video.play().catch(() => {});
     }
   };
+
+  // IntersectionObserver: Only play when video is in viewport to conserve GPU & CPU memory
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !autoPlay) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.25 }
+    );
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, [autoPlay]);
 
   // Sync muted property and DOM attributes when isMuted state changes without reloading the video stream
   useEffect(() => {
