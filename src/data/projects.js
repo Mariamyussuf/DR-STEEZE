@@ -235,9 +235,9 @@ export const aboutData = {
   tiktok: "@ayan_tofunmi",
   portrait: "/images/IMG_9481.jpg",
   stats: [
-    { value: "3+ YEARS", label: "Directing & Production Experience" },
+    { value: "1 YEAR", label: "Content Creation Journey" },
     { value: "6 MONTHS", label: "Professional Studio Business" },
-    { value: "CRAFTSMAN", label: "Leather, Sound & Civil B.Eng" },
-    { value: "100%", label: "Creative Drive" }
+    { value: "3+", label: "Crafts & Disciplines" },
+    { value: "100%", label: "Creative Dedication" }
   ]
 };

@@ -48,7 +48,13 @@ export default function VideoPlayer({
 
     const nextMuted = !isMuted;
     video.muted = nextMuted;
+    video.defaultMuted = nextMuted;
     video.volume = nextMuted ? 0 : 1.0;
+    if (nextMuted) {
+      video.setAttribute('muted', '');
+    } else {
+      video.removeAttribute('muted');
+    }
     setIsMuted(nextMuted);
 
     if (!nextMuted) {
@@ -56,12 +62,18 @@ export default function VideoPlayer({
     }
   };
 
-  // Sync muted property when isMuted state changes without reloading the video stream
+  // Sync muted property and DOM attributes when isMuted state changes without reloading the video stream
   useEffect(() => {
     const video = videoRef.current;
     if (video) {
       video.muted = isMuted;
+      video.defaultMuted = isMuted;
       video.volume = isMuted ? 0 : 1.0;
+      if (isMuted) {
+        video.setAttribute('muted', '');
+      } else {
+        video.removeAttribute('muted');
+      }
     }
   }, [isMuted]);
 
